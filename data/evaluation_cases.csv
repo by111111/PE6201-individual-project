@@ -1,0 +1,11 @@
+case_id,industry,use_case,target_user,duration_weeks,pain_point,constraint,start_date
+C01,40-person fashion retailer,Draft replies to repetitive customer-service emails,5 customer-service associates,2,Agents spend too long drafting similar replies,No customer names or order IDs may be entered,2026-10-12
+C02,25-person accounting firm,Summarise public regulatory updates,3 compliance analysts,2,Weekly scanning is inconsistent,Only public source text may be used,2026-10-12
+C03,60-person logistics company,Draft internal shift handover notes,8 shift supervisors,3,Handover quality varies by supervisor,No employee health or disciplinary information,2026-10-12
+C04,30-person training provider,Draft course-description alternatives,2 marketing coordinators,2,Writing variants takes too long,No learner records may be used,2026-10-12
+C05,45-person restaurant group,Classify public customer-review themes,3 operations analysts,3,Managers cannot spot repeated service issues,Reviews must be anonymised before use,2026-10-12
+C06,20-person design studio,Draft project-brief checklists,4 account managers,2,Briefs often omit delivery constraints,Do not upload client contracts,2026-10-12
+C07,55-person property-services firm,Draft maintenance-request acknowledgement messages,6 service coordinators,2,Response wording is inconsistent,No tenant names or addresses,2026-10-12
+C08,35-person wholesale distributor,Summarise supplier meeting notes,4 procurement staff,2,Action items are missed after meetings,Use synthetic meeting notes only,2026-10-12
+C09,70-person education publisher,Draft internal editorial handover summaries,5 editors,3,Projects lose context between editors,No student work or personal information,2026-10-12
+C10,28-person events agency,Draft post-event feedback survey questions,3 event managers,2,Feedback forms are inconsistent,Do not collect participant contact details,2026-10-12

@@ -1,0 +1,1987 @@
+{
+  "method": "Same 10 synthetic cases; structured form + fixed system prompt versus direct raw-model request. Both outputs scored by the same strict five-item 0/1 rubric, with evidence retained for review.",
+  "summary": {
+    "n_cases": 10,
+    "structured_mean": 5.0,
+    "raw_mean": 4.0,
+    "mean_difference": 1.0,
+    "total_api_cost_usd": 0.0344564
+  },
+  "results": [
+    {
+      "case_id": "C01",
+      "structured": {
+        "output": {
+          "objective": "Reduce time spent by customer-service associates drafting repetitive email replies by implementing AI-assisted draft replies.",
+          "test_group": "5 customer-service associates at the fashion retailer",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-12",
+              "task": "Kickoff meeting to align on project goals, constraints, and timeline",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Collect and anonymize a representative sample of repetitive customer-service emails excluding customer names and order IDs",
+              "owner": "Customer-Service Lead"
+            },
+            {
+              "date_or_deadline": "2026-10-16",
+              "task": "Develop AI model to draft replies based on anonymized email samples",
+              "owner": "AI Developer"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Deploy AI draft reply tool to test group and provide training on usage and constraints",
+              "owner": "IT Support and Trainer"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Collect usage data and feedback, analyze time savings and user satisfaction",
+              "owner": "Data Analyst and Customer-Service Lead"
+            }
+          ],
+          "success_metric": "Achieve at least 30% reduction in average time spent drafting repetitive email replies compared to baseline of 15 minutes per email",
+          "feedback_instrument": "Weekly surveys and interviews with the 5 customer-service associates during and after the 2-week trial to collect qualitative and quantitative feedback on usability, accuracy, and compliance with constraints",
+          "risks_and_mitigations": [
+            {
+              "risk": "AI drafts may inadvertently include customer names or order IDs violating constraints",
+              "mitigation": "Implement strict data anonymization and validation checks before deployment; train associates to review drafts carefully"
+            },
+            {
+              "risk": "Associates may resist adopting the new AI tool due to change in workflow",
+              "mitigation": "Provide comprehensive training, highlight time-saving benefits, and collect user feedback to iteratively improve the tool"
+            }
+          ],
+          "human_approval_checkpoint": "Project Manager and Customer-Service Lead must review and approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "5 customer-service associates at the fashion retailer",
+            "stages_dated": "2026-10-12, 2026-10-14, 2026-10-16, 2026-10-19, 2026-10-26",
+            "success_metric_named": "Achieve at least 30% reduction in average time spent drafting repetitive email replies compared to baseline of 15 minutes per email",
+            "feedback_instrument_specified": "Weekly surveys and interviews with the 5 customer-service associates during and after the 2-week trial",
+            "human_checkpoint_named": "Project Manager and Customer-Service Lead must review and approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 5.583,
+          "usage": {
+            "prompt_tokens": 318,
+            "completion_tokens": 496,
+            "total_tokens": 814,
+            "cost": 0.0009208,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0009208,
+              "upstream_inference_prompt_cost": 0.0001272,
+              "upstream_inference_completions_cost": 0.0007936
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0009208
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 5.613,
+          "usage": {
+            "prompt_tokens": 640,
+            "completion_tokens": 220,
+            "total_tokens": 860,
+            "cost": 0.000608,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000608,
+              "upstream_inference_prompt_cost": 0.000256,
+              "upstream_inference_completions_cost": 0.000352
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.000608
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored for your 40-person fashion retailer to draft replies to repetitive customer-service emails:\n\n---\n\n### AI Pilot Plan: Automated Drafting of Customer-Service Email Replies\n\n**Company:** 40-person Fashion Retailer  \n**Use Case:** Draft replies to repetitive customer-service emails  \n**Intended Users:** 5 Customer-Service Associates  \n**Duration:** 2 weeks  \n**Start Date:** 2026-10-12  \n**Pain Point:** Agents spend too long drafting similar replies  \n**Constraint:** No customer names or order IDs may be entered  \n\n---\n\n### 1. Objectives\n- Reduce time spent by agents drafting repetitive email replies.\n- Maintain or improve response quality and customer satisfaction.\n- Ensure compliance with data privacy by excluding customer names and order IDs.\n\n### 2. Scope\n- Focus on common, repetitive customer inquiries (e.g., return policies, shipping status, product availability).\n- AI drafts initial email replies; agents review, personalize (without adding names/IDs), and send.\n- No integration with order management systems to avoid entering sensitive data.\n\n### 3. Preparation (Before Start Date)\n- **Data Collection:** Gather a representative sample of repetitive customer-service emails and typical replies (anonymized, with no customer names or order IDs).\n- **Template Creation:** Develop standardized response templates for common queries.\n- **AI Setup:** Configure AI model to generate draft replies based on templates and input email content, explicitly excluding any personal identifiers.\n- **Training:** Brief the 5 customer-service associates on how to use the AI tool, emphasizing the constraint on data entry.\n\n### 4. Pilot Execution (2026-10-12 to 2026-10-26)\n\n| Week | Activities |\n|-------|------------|\n| Week 1 | - Start using AI to draft replies for repetitive emails.<br>- Agents review and edit drafts before sending.<br>- Collect feedback on draft quality, time saved, and usability.<br>- Monitor compliance with no entry of names/order IDs. |\n| Week 2 | - Continue usage with improvements based on Week 1 feedback.<br>- Track metrics: average time per email, number of edits per draft, agent satisfaction.<br>- Identify any issues or risks. |\n\n### 5. Metrics & Evaluation\n- **Time Saved:** Measure average time spent drafting replies before and during pilot.\n- **Draft Quality:** Agents rate AI drafts on relevance and accuracy.\n- **Compliance:** Confirm no customer names or order IDs are entered.\n- **User Satisfaction:** Collect qualitative feedback from agents.\n- **Customer Feedback:** Monitor any changes in customer satisfaction scores (if available).\n\n### 6. Risks & Mitigations\n- **Risk:** AI drafts may occasionally include placeholders or sensitive info.  \n  **Mitigation:** Implement strict filters to remove personal data; train agents to verify drafts carefully.\n- **Risk:** Agents may over-rely on AI and miss personalization.  \n  **Mitigation:** Encourage agents to review and customize drafts within constraints.\n- **Risk:** Resistance to new tool.  \n  **Mitigation:** Provide training and support; highlight time-saving benefits.\n\n### 7. Post-Pilot Actions\n- Analyze pilot data and feedback.\n- Decide on full rollout or further refinement.\n- Explore integration options for scaling while maintaining privacy constraints.\n\n---\n\nIf you want, I can also help draft a communication plan or training materials for the associates. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 0,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 0
+          },
+          "evidence": {
+            "test_group_named": "Intended Users: 5 Customer-Service Associates",
+            "stages_dated": "Preparation (Before Start Date), Pilot Execution (2026-10-12 to 2026-10-26), Week 1, Week 2",
+            "success_metric_named": "Time Saved: Measure average time spent drafting replies before and during pilot.",
+            "feedback_instrument_specified": "Collect feedback on draft quality, time saved, and usability; Agents rate AI drafts on relevance and accuracy.",
+            "human_checkpoint_named": "not found"
+          },
+          "total": 3
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.91,
+          "usage": {
+            "prompt_tokens": 83,
+            "completion_tokens": 697,
+            "total_tokens": 780,
+            "cost": 0.0011484,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0011484,
+              "upstream_inference_prompt_cost": 3.32e-05,
+              "upstream_inference_completions_cost": 0.0011152
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0011484
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.832,
+          "usage": {
+            "prompt_tokens": 901,
+            "completion_tokens": 191,
+            "total_tokens": 1092,
+            "cost": 0.000666,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000666,
+              "upstream_inference_prompt_cost": 0.0003604,
+              "upstream_inference_completions_cost": 0.0003056
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.000666
+        }
+      }
+    },
+    {
+      "case_id": "C02",
+      "structured": {
+        "output": {
+          "objective": "Develop and implement a consistent weekly summary process for public regulatory updates to improve compliance analysts' efficiency",
+          "test_group": "3 compliance analysts at the accounting firm",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Identify and list all relevant public regulatory sources for weekly scanning",
+              "owner": "Compliance Team Lead"
+            },
+            {
+              "date_or_deadline": "2026-10-16",
+              "task": "Design a standardized template for summarizing regulatory updates",
+              "owner": "Compliance Analysts"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Pilot the weekly summary process using the template and public sources",
+              "owner": "Compliance Analysts"
+            },
+            {
+              "date_or_deadline": "2026-10-23",
+              "task": "Collect feedback from compliance analysts on process usability and completeness",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Refine the summary process based on feedback and finalize documentation",
+              "owner": "Compliance Team Lead"
+            }
+          ],
+          "success_metric": "Achieve 90% consistency in weekly regulatory update summaries compared to a baseline of 50% inconsistency",
+          "feedback_instrument": "Collect qualitative and quantitative feedback from the 3 compliance analysts at the end of week 2 via structured survey and one-on-one interviews focusing on ease of use, completeness, and time savings",
+          "risks_and_mitigations": [
+            {
+              "risk": "Incomplete coverage of relevant public regulatory sources",
+              "mitigation": "Involve compliance analysts in source identification and periodically review source list"
+            },
+            {
+              "risk": "Resistance to adopting the new summary template",
+              "mitigation": "Engage analysts early in template design and incorporate their suggestions"
+            }
+          ],
+          "human_approval_checkpoint": "Project owner must review and approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "3 compliance analysts at the accounting firm",
+            "stages_dated": "[{\"date_or_deadline\": \"2026-10-14\"}, {\"date_or_deadline\": \"2026-10-16\"}]",
+            "success_metric_named": "Achieve 90% consistency in weekly regulatory update summaries compared to a baseline of 50% inconsistency",
+            "feedback_instrument_specified": "Collect qualitative and quantitative feedback from the 3 compliance analysts at the end of week 2 via structured survey and one-on-one interviews",
+            "human_checkpoint_named": "Project owner must review and approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 5.212,
+          "usage": {
+            "prompt_tokens": 311,
+            "completion_tokens": 443,
+            "total_tokens": 754,
+            "cost": 0.0008332,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008332,
+              "upstream_inference_prompt_cost": 0.0001244,
+              "upstream_inference_completions_cost": 0.0007088
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008332
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.572,
+          "usage": {
+            "prompt_tokens": 587,
+            "completion_tokens": 211,
+            "total_tokens": 798,
+            "cost": 0.0005724,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005724,
+              "upstream_inference_prompt_cost": 0.0002348,
+              "upstream_inference_completions_cost": 0.0003376
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005724
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored for your 25-person accounting firm to address the summarization of public regulatory updates:\n\n---\n\n### AI Pilot Plan: Regulatory Updates Summarization\n\n**Company:** 25-person Accounting Firm  \n**Use Case:** Summarize Public Regulatory Updates  \n**Intended Users:** 3 Compliance Analysts  \n**Duration:** 2 weeks  \n**Start Date:** 2026-10-12  \n**Pain Point:** Weekly scanning of regulatory updates is inconsistent  \n**Constraint:** Only public source text may be used\n\n---\n\n### 1. **Objective**\n\nTo implement and evaluate an AI-powered summarization tool that consistently scans and summarizes public regulatory updates, improving the efficiency and reliability of compliance analysts’ weekly review process.\n\n---\n\n### 2. **Scope**\n\n- Focus on publicly available regulatory updates relevant to accounting and compliance.\n- Summaries will be concise, highlighting key changes and actionable items.\n- Tool will support 3 compliance analysts as primary users.\n- Pilot duration: 2 weeks, starting 2026-10-12.\n\n---\n\n### 3. **Pilot Setup**\n\n**a. Data Sources:**  \n- Official government regulatory websites (e.g., SEC, IRS, FASB)  \n- Public regulatory newsletters and bulletins  \n- Industry regulatory portals with public access\n\n**b. AI Tool Selection:**  \n- Use an AI summarization platform capable of ingesting text from URLs and documents.  \n- Ensure the tool respects data privacy and uses only public data.\n\n**c. Integration:**  \n- Provide compliance analysts with access via a web dashboard or email digest.  \n- Set up automated weekly scans and summarization workflows.\n\n---\n\n### 4. **Process Workflow**\n\n| Step | Description | Responsible | Timeline |\n|-------|-------------|-------------|----------|\n| 1 | Identify and list key public regulatory sources | Compliance Lead | Before 2026-10-12 |\n| 2 | Configure AI tool to scan and extract updates from sources | IT/AI Specialist | 2026-10-12 to 2026-10-13 |\n| 3 | Train AI summarization model on sample regulatory texts | AI Specialist | 2026-10-14 |\n| 4 | Run initial summarization and review output | Compliance Analysts | 2026-10-15 |\n| 5 | Adjust summarization parameters based on feedback | AI Specialist | 2026-10-16 |\n| 6 | Conduct full weekly scan and generate summary | AI Tool | 2026-10-19 |\n| 7 | Analysts review and provide feedback | Compliance Analysts | 2026-10-20 |\n| 8 | Final adjustments and prepare pilot report | AI Specialist & Compliance Lead | 2026-10-26 |\n\n---\n\n### 5. **Success Metrics**\n\n- **Consistency:** AI delivers summaries weekly without fail.  \n- **Accuracy:** Summaries correctly capture key regulatory changes (target >90% accuracy).  \n- **Time Savings:** Reduction in manual scanning time by at least 50%.  \n- **User Satisfaction:** Positive feedback from compliance analysts (survey score >4/5).\n\n---\n\n### 6. **Risks & Mitigations**\n\n| Risk | Mitigation |\n|-------|------------|\n| AI misses critical updates | Regular manual spot checks during pilot |\n| Public sources change format | Monitor sources weekly, update scraping rules |\n| Analysts find summaries unclear | Iterative feedback and tuning of summarization style |\n\n---\n\n### 7. **Post-Pilot Recommendations**\n\n- If successful, scale AI summarization to cover additional regulatory areas.  \n- Integrate with internal compliance management systems.  \n- Explore expanding user base beyond compliance analysts.\n\n---\n\nIf you want, I can also help draft communications or training materials for the compliance analysts. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "Intended Users: 3 Compliance Analysts",
+            "stages_dated": "Step 2: 2026-10-12 to 2026-10-13; Step 4: 2026-10-15",
+            "success_metric_named": "\"Accuracy: Summaries correctly capture key regulatory changes (target >90% accuracy).\" and \"User Satisfaction: Positive feedback from compliance analysts (survey score >4/5).\"",
+            "feedback_instrument_specified": "User Satisfaction: Positive feedback from compliance analysts (survey score >4/5)",
+            "human_checkpoint_named": "Step 4: Run initial summarization and review output | Compliance Analysts | 2026-10-15"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 8.247,
+          "usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 774,
+            "total_tokens": 850,
+            "cost": 0.0012688,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0012688,
+              "upstream_inference_prompt_cost": 3.04e-05,
+              "upstream_inference_completions_cost": 0.0012384
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0012688
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.566,
+          "usage": {
+            "prompt_tokens": 978,
+            "completion_tokens": 228,
+            "total_tokens": 1206,
+            "cost": 0.000756,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000756,
+              "upstream_inference_prompt_cost": 0.0003912,
+              "upstream_inference_completions_cost": 0.0003648
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.000756
+        }
+      }
+    },
+    {
+      "case_id": "C03",
+      "structured": {
+        "output": {
+          "objective": "Improve consistency and quality of internal shift handover notes among 8 shift supervisors",
+          "test_group": "All 8 shift supervisors in the logistics company",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-15",
+              "task": "Conduct kickoff meeting to align on handover note standards and constraints",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Develop and distribute a standardized handover note template excluding health or disciplinary info",
+              "owner": "Operations Lead"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Supervisors draft handover notes using the new template for one full week",
+              "owner": "Shift Supervisors"
+            },
+            {
+              "date_or_deadline": "2026-10-29",
+              "task": "Collect and review handover notes for quality and consistency",
+              "owner": "Quality Assurance Team"
+            },
+            {
+              "date_or_deadline": "2026-11-02",
+              "task": "Gather feedback from supervisors and adjust template/process as needed",
+              "owner": "Project Manager"
+            }
+          ],
+          "success_metric": "Increase in handover note quality score to at least 85% consistency from baseline of 60%",
+          "feedback_instrument": "Weekly anonymous survey of all 8 supervisors on ease of use and clarity of handover notes collected at end of each week",
+          "risks_and_mitigations": [
+            {
+              "risk": "Supervisors may omit critical operational details due to template constraints",
+              "mitigation": "Include clear guidance and examples in the template to ensure essential info is captured without violating constraints"
+            },
+            {
+              "risk": "Resistance to change in handover note format",
+              "mitigation": "Engage supervisors early in template design and provide training/support"
+            }
+          ],
+          "human_approval_checkpoint": "Project owner must review and approve this plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "All 8 shift supervisors in the logistics company",
+            "stages_dated": "\"2026-10-15\", \"2026-10-19\", \"2026-10-26\", \"2026-10-29\", \"2026-11-02\"",
+            "success_metric_named": "Increase in handover note quality score to at least 85% consistency from baseline of 60%",
+            "feedback_instrument_specified": "Weekly anonymous survey of all 8 supervisors on ease of use and clarity of handover notes collected at end of each week",
+            "human_checkpoint_named": "Project owner must review and approve this plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 5.551,
+          "usage": {
+            "prompt_tokens": 313,
+            "completion_tokens": 447,
+            "total_tokens": 760,
+            "cost": 0.0008404,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008404,
+              "upstream_inference_prompt_cost": 0.0001252,
+              "upstream_inference_completions_cost": 0.0007152
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008404
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.701,
+          "usage": {
+            "prompt_tokens": 591,
+            "completion_tokens": 217,
+            "total_tokens": 808,
+            "cost": 0.0005836,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005836,
+              "upstream_inference_prompt_cost": 0.0002364,
+              "upstream_inference_completions_cost": 0.0003472
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005836
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored for your 60-person logistics company to improve the quality and consistency of internal shift handover notes.\n\n---\n\n### AI Pilot Plan: Automated Drafting of Internal Shift Handover Notes\n\n**Company:** 60-person logistics company  \n**Use Case:** Draft internal shift handover notes  \n**Intended Users:** 8 shift supervisors  \n**Duration:** 3 weeks  \n**Pain Point:** Handover quality varies by supervisor  \n**Constraint:** No employee health or disciplinary information included  \n**Start Date:** 2026-10-12\n\n---\n\n### 1. **Objective**\n\n- Improve consistency and quality of shift handover notes.\n- Reduce supervisor workload by automating draft creation.\n- Ensure compliance with privacy constraints (exclude health and disciplinary info).\n\n---\n\n### 2. **Scope**\n\n- Focus on drafting shift handover notes for 8 shift supervisors.\n- Notes to cover operational updates, task status, equipment issues, and other relevant logistics info.\n- Exclude any sensitive employee health or disciplinary details.\n\n---\n\n### 3. **Pilot Timeline**\n\n| Week | Activities |\n|-------|------------|\n| Week 1 (2026-10-12 to 2026-10-18) | Setup and training: Collect sample handover notes, define templates, train AI model on existing notes, and configure exclusion filters for sensitive info. Conduct initial user training sessions. |\n| Week 2 (2026-10-19 to 2026-10-25) | Live pilot: Supervisors use AI-generated draft notes during shift handovers. Collect feedback on draft quality, usability, and accuracy. Monitor compliance with privacy constraints. |\n| Week 3 (2026-10-26 to 2026-11-01) | Evaluation and iteration: Analyze feedback, refine AI model and templates, address issues, and prepare final report with recommendations for full deployment. |\n\n---\n\n### 4. **Key Activities**\n\n- **Data Collection:** Gather past handover notes (anonymized) to train AI.\n- **Template Design:** Create standardized note templates emphasizing key info (e.g., operational status, pending tasks).\n- **AI Model Training:** Use NLP techniques to generate draft notes based on shift data inputs.\n- **Privacy Filters:** Implement rules to automatically exclude health or disciplinary info.\n- **User Training:** Educate supervisors on how to review and edit AI drafts.\n- **Feedback Mechanism:** Set up a simple form or tool for supervisors to rate drafts and suggest improvements.\n- **Monitoring:** Track usage, note quality consistency, and compliance with constraints.\n\n---\n\n### 5. **Success Metrics**\n\n- **Quality Improvement:** Reduction in variability of handover note quality (measured via supervisor peer reviews).\n- **User Adoption:** Percentage of supervisors actively using AI drafts.\n- **Time Savings:** Reduction in time spent drafting notes.\n- **Compliance:** Zero instances of prohibited info in notes.\n- **User Satisfaction:** Positive feedback from supervisors on draft usefulness.\n\n---\n\n### 6. **Risks & Mitigations**\n\n| Risk | Mitigation |\n|-------|------------|\n| AI drafts miss critical operational details | Include manual review step; iterative model refinement |\n| Supervisors resist adopting new tool | Provide hands-on training and highlight time savings |\n| Sensitive info accidentally included | Strong filtering rules and manual supervisor oversight |\n| Data privacy concerns | Anonymize training data; restrict access to AI system |\n\n---\n\n### 7. **Resources Needed**\n\n- AI/NLP specialist or vendor for model development\n- IT support for integration with existing systems\n- Shift supervisors’ time for training and feedback\n- Sample handover notes for training data\n\n---\n\n### 8. **Next Steps**\n\n- Confirm pilot team and assign roles.\n- Collect and anonymize historical handover notes.\n- Develop and test AI draft generation prototype.\n- Schedule training sessions starting 2026-10-12.\n\n---\n\nIf you want, I can also help draft the training materials or feedback forms for supervisors. Would you like me to do that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 0,
+            "feedback_instrument_specified": 0,
+            "human_checkpoint_named": 0
+          },
+          "evidence": {
+            "test_group_named": "Intended Users: 8 shift supervisors",
+            "stages_dated": "Week 1 (2026-10-12 to 2026-10-18), Week 2 (2026-10-19 to 2026-10-25), Week 3 (2026-10-26 to 2026-11-01)",
+            "success_metric_named": "Quality Improvement: Reduction in variability of handover note quality (measured via supervisor peer reviews). User Adoption: Percentage of supervisors actively using AI drafts. Time Savings: Reduction in time spent drafting notes.",
+            "feedback_instrument_specified": "Set up a simple form or tool for supervisors to rate drafts and suggest improvements. (No named instrument or who/when specified)",
+            "human_checkpoint_named": "Include manual review step; iterative model refinement (manual review mentioned but not explicitly required before implementation or rollout)"
+          },
+          "total": 2
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.836,
+          "usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 822,
+            "total_tokens": 900,
+            "cost": 0.0013464,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0013464,
+              "upstream_inference_prompt_cost": 3.12e-05,
+              "upstream_inference_completions_cost": 0.0013152
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0013464
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.212,
+          "usage": {
+            "prompt_tokens": 1026,
+            "completion_tokens": 264,
+            "total_tokens": 1290,
+            "cost": 0.0008328,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008328,
+              "upstream_inference_prompt_cost": 0.0004104,
+              "upstream_inference_completions_cost": 0.0004224
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008328
+        }
+      }
+    },
+    {
+      "case_id": "C04",
+      "structured": {
+        "output": {
+          "objective": "Create and evaluate alternative course descriptions to reduce writing time for marketing coordinators",
+          "test_group": "2 marketing coordinators at the training provider",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-12",
+              "task": "Kickoff meeting to align on objectives, constraints, and initial ideas for course-description alternatives",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-15",
+              "task": "Draft initial set of course-description alternatives without using learner records",
+              "owner": "Marketing Coordinators"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Review and refine course-description alternatives based on internal feedback",
+              "owner": "Marketing Coordinators"
+            },
+            {
+              "date_or_deadline": "2026-10-22",
+              "task": "Conduct a time-trial test to measure time taken to write course-description variants using new drafts",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Analyze results and prepare a summary report with recommendations",
+              "owner": "Project Manager"
+            }
+          ],
+          "success_metric": "Reduce average time to draft course-description variants by 30% from baseline of 4 hours to 2.8 hours",
+          "feedback_instrument": "Collect qualitative and quantitative feedback from the 2 marketing coordinators at the end of week 2 on ease of use, clarity, and time savings",
+          "risks_and_mitigations": [
+            {
+              "risk": "Marketing coordinators may find alternatives unclear or unsuitable",
+              "mitigation": "Include iterative review and refinement stage with direct coordinator involvement"
+            },
+            {
+              "risk": "Time savings may be less than expected due to unforeseen complexities",
+              "mitigation": "Conduct time-trial test to measure actual time and adjust approach accordingly"
+            }
+          ],
+          "human_approval_checkpoint": "Project Manager and Marketing Coordinators must approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "2 marketing coordinators at the training provider",
+            "stages_dated": "2026-10-12, 2026-10-15, 2026-10-19, 2026-10-22, 2026-10-26",
+            "success_metric_named": "Reduce average time to draft course-description variants by 30% from baseline of 4 hours to 2.8 hours",
+            "feedback_instrument_specified": "Collect qualitative and quantitative feedback from the 2 marketing coordinators at the end of week 2",
+            "human_checkpoint_named": "Project Manager and Marketing Coordinators must approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 4.954,
+          "usage": {
+            "prompt_tokens": 310,
+            "completion_tokens": 456,
+            "total_tokens": 766,
+            "cost": 0.0008536,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008536,
+              "upstream_inference_prompt_cost": 0.000124,
+              "upstream_inference_completions_cost": 0.0007296
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008536
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.469,
+          "usage": {
+            "prompt_tokens": 600,
+            "completion_tokens": 217,
+            "total_tokens": 817,
+            "cost": 0.0005872,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005872,
+              "upstream_inference_prompt_cost": 0.00024,
+              "upstream_inference_completions_cost": 0.0003472
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005872
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here’s a detailed AI pilot plan tailored for your 30-person training provider company, focused on drafting course-description alternatives for your two marketing coordinators.\n\n---\n\n### AI Pilot Plan: Drafting Course-Description Alternatives\n\n**Company:** 30-person training provider  \n**Use Case:** Draft course-description alternatives  \n**Intended Users:** 2 marketing coordinators  \n**Duration:** 2 weeks  \n**Start Date:** 2026-10-12  \n**Pain Point:** Writing variants takes too long  \n**Constraint:** No learner records may be used  \n\n---\n\n### 1. **Objectives**\n\n- Reduce time spent by marketing coordinators on drafting multiple course-description variants.\n- Improve the quality and creativity of course descriptions.\n- Ensure compliance with data privacy by not using any learner records.\n- Evaluate AI’s effectiveness and user satisfaction in supporting marketing content creation.\n\n---\n\n### 2. **Scope**\n\n- Focus exclusively on generating alternative course descriptions for existing and upcoming courses.\n- Use only publicly available course content, syllabi, and marketing materials as input.\n- No learner data or personal information will be used or processed.\n- Pilot limited to 2 marketing coordinators to gather focused feedback.\n\n---\n\n### 3. **AI Tool Selection**\n\n- Choose an AI writing assistant capable of generating creative text variants (e.g., GPT-based model).\n- Ensure the tool supports data privacy and can operate without learner data.\n- Prefer tools with customizable prompts and style guidelines to align with brand voice.\n\n---\n\n### 4. **Preparation (Before Start Date)**\n\n- **Data Collection:** Gather existing course descriptions, syllabi, and marketing guidelines.\n- **Training/Setup:** Configure AI tool with company-specific terminology and tone.\n- **User Training:** Brief marketing coordinators on how to use the AI tool effectively.\n- **Define Success Metrics:** Time saved, number of variants generated, user satisfaction scores.\n\n---\n\n### 5. **Pilot Execution (2026-10-12 to 2026-10-26)**\n\n- **Week 1:**\n  - Marketing coordinators use AI to draft 3-5 variants per course description.\n  - Collect qualitative feedback on ease of use and quality of output.\n  - Track time spent on drafting with and without AI assistance.\n\n- **Week 2:**\n  - Refine prompts and AI settings based on Week 1 feedback.\n  - Continue generating course-description variants.\n  - Begin comparing AI-assisted drafts with previous manual drafts for quality and creativity.\n\n---\n\n### 6. **Data Privacy & Compliance**\n\n- Strictly exclude learner records or any personal data from AI inputs.\n- Use only course-related content and publicly available information.\n- Ensure AI tool complies with relevant data protection regulations.\n\n---\n\n### 7. **Evaluation & Metrics**\n\n- **Time Efficiency:** Measure reduction in time to produce course-description variants.\n- **Quality Assessment:** Marketing coordinators rate AI-generated descriptions on creativity, clarity, and brand alignment.\n- **User Satisfaction:** Collect feedback on AI tool usability and helpfulness.\n- **Output Volume:** Number of variants generated per course description.\n\n---\n\n### 8. **Post-Pilot Review (After 2026-10-26)**\n\n- Analyze collected data and feedback.\n- Decide on scaling AI use to other marketing team members or other content types.\n- Identify improvements needed in AI prompts, training, or integration.\n- Document lessons learned and best practices.\n\n---\n\n### 9. **Risks & Mitigations**\n\n| Risk                            | Mitigation                                      |\n|--------------------------------|------------------------------------------------|\n| AI generates off-brand content  | Use prompt engineering and human review        |\n| Data privacy concerns           | Strictly exclude learner data, audit inputs    |\n| Resistance to AI adoption       | Provide training and highlight time savings    |\n| Over-reliance on AI             | Maintain human oversight and editing            |\n\n---\n\nIf you want, I can also help draft example AI prompts or a user guide for the marketing coordinators. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "Pilot limited to 2 marketing coordinators to gather focused feedback.",
+            "stages_dated": "Start Date: 2026-10-12; Pilot Execution (2026-10-12 to 2026-10-26); Week 1 and Week 2 described.",
+            "success_metric_named": "\"Define Success Metrics: Time saved, number of variants generated, user satisfaction scores.\" and \"Measure reduction in time to produce course-description variants.\"",
+            "feedback_instrument_specified": "Collect qualitative feedback on ease of use and quality of output; User Satisfaction: Collect feedback on AI tool usability and helpfulness.",
+            "human_checkpoint_named": "Use prompt engineering and human review"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.833,
+          "usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 807,
+            "total_tokens": 882,
+            "cost": 0.0013212,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0013212,
+              "upstream_inference_prompt_cost": 3e-05,
+              "upstream_inference_completions_cost": 0.0012912
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0013212
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.776,
+          "usage": {
+            "prompt_tokens": 1011,
+            "completion_tokens": 223,
+            "total_tokens": 1234,
+            "cost": 0.0007612,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0007612,
+              "upstream_inference_prompt_cost": 0.0004044,
+              "upstream_inference_completions_cost": 0.0003568
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0007612
+        }
+      }
+    },
+    {
+      "case_id": "C05",
+      "structured": {
+        "output": {
+          "objective": "Develop and deploy a system to classify public customer-review themes to help managers identify repeated service issues",
+          "test_group": "3 operations analysts within the restaurant group",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-15",
+              "task": "Collect and anonymize customer reviews from public sources ensuring compliance with privacy constraints",
+              "owner": "Data Privacy Officer"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Develop initial classification model to categorize review themes relevant to service issues",
+              "owner": "Data Scientist"
+            },
+            {
+              "date_or_deadline": "2026-10-23",
+              "task": "Deploy classification tool to operations analysts and provide training on usage and interpretation",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-30",
+              "task": "Collect feedback from analysts on tool effectiveness and identify repeated service issues detected",
+              "owner": "Operations Manager"
+            },
+            {
+              "date_or_deadline": "2026-11-02",
+              "task": "Analyze feedback and usage data to refine classification model and reporting outputs",
+              "owner": "Data Scientist"
+            }
+          ],
+          "success_metric": "Achieve at least 80% accuracy in theme classification compared to baseline manual tagging accuracy of 60%",
+          "feedback_instrument": "Operations analysts provide weekly structured feedback on classification accuracy, usability, and identified service issues during the 3-week period",
+          "risks_and_mitigations": [
+            {
+              "risk": "Anonymization process may remove critical context reducing classification accuracy",
+              "mitigation": "Involve data privacy officer early to balance anonymization with data utility and test anonymization impact on sample data"
+            },
+            {
+              "risk": "Operations analysts may not adopt the new tool due to usability challenges",
+              "mitigation": "Provide comprehensive training and ongoing support, incorporate analyst feedback to improve user interface"
+            }
+          ],
+          "human_approval_checkpoint": "Project owner must review and approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "3 operations analysts within the restaurant group",
+            "stages_dated": "dates: 2026-10-15, 2026-10-19, 2026-10-23, 2026-10-30, 2026-11-02",
+            "success_metric_named": "Achieve at least 80% accuracy in theme classification compared to baseline manual tagging accuracy of 60%",
+            "feedback_instrument_specified": "Operations analysts provide weekly structured feedback on classification accuracy, usability, and identified service issues during the 3-week period",
+            "human_checkpoint_named": "Project owner must review and approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 5.418,
+          "usage": {
+            "prompt_tokens": 313,
+            "completion_tokens": 459,
+            "total_tokens": 772,
+            "cost": 0.0008596,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008596,
+              "upstream_inference_prompt_cost": 0.0001252,
+              "upstream_inference_completions_cost": 0.0007344
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008596
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.783,
+          "usage": {
+            "prompt_tokens": 603,
+            "completion_tokens": 216,
+            "total_tokens": 819,
+            "cost": 0.0005868,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005868,
+              "upstream_inference_prompt_cost": 0.0002412,
+              "upstream_inference_completions_cost": 0.0003456
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005868
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored to your restaurant group’s situation:\n\n---\n\n### AI Pilot Plan: Customer Review Theme Classification\n\n**Company:** 45-person restaurant group  \n**Use Case:** Classify public customer-review themes  \n**Intended Users:** 3 Operations Analysts  \n**Duration:** 3 weeks  \n**Pain Point:** Managers cannot spot repeated service issues  \n**Constraint:** Reviews must be anonymised before use  \n**Start Date:** 2026-10-12\n\n---\n\n### 1. **Objectives**\n\n- Automatically classify and categorize themes in public customer reviews (e.g., food quality, service speed, cleanliness).\n- Provide actionable insights to managers by highlighting recurring service issues.\n- Ensure customer privacy by anonymizing all review data before processing.\n\n---\n\n### 2. **Scope**\n\n- Analyze publicly available customer reviews from major platforms (e.g., Google, Yelp).\n- Focus on reviews related to the restaurant group’s locations.\n- Deliver a dashboard or report summarizing key themes and trends.\n- Train and validate the AI model within the 3-week timeframe.\n\n---\n\n### 3. **Key Activities & Timeline**\n\n| Week | Activities                                                                                   | Deliverables                          |\n|-------|---------------------------------------------------------------------------------------------|-------------------------------------|\n| 1     | - Collect and anonymize customer reviews<br>- Define theme categories with analysts<br>- Prepare dataset for training | Anonymized dataset<br>Theme taxonomy |\n| 2     | - Develop and train AI classification model<br>- Validate model accuracy with sample data<br>- Iterate based on feedback | Trained AI model<br>Validation report |\n| 3     | - Deploy model for batch classification<br>- Create dashboard/report for analysts<br>- Train analysts on tool usage<br>- Gather feedback for next steps | Final report/dashboard<br>User training session |\n\n---\n\n### 4. **Data Handling & Privacy**\n\n- **Anonymization Process:**  \n  - Remove all personally identifiable information (names, locations, dates, contact info) from reviews before ingestion.  \n  - Use automated scripts to detect and redact sensitive data.  \n- **Data Storage:**  \n  - Store anonymized data securely with restricted access.  \n- **Compliance:**  \n  - Ensure compliance with relevant data privacy regulations (e.g., GDPR if applicable).\n\n---\n\n### 5. **Technology & Tools**\n\n- **Data Collection:** Web scraping tools or APIs from review platforms.  \n- **Anonymization:** Custom Python scripts or NLP libraries for PII detection (e.g., spaCy, Presidio).  \n- **Modeling:** NLP classification models (e.g., fine-tuned BERT or similar transformer models).  \n- **Visualization:** BI tools (e.g., Tableau, Power BI) or custom dashboards.  \n- **Collaboration:** Use project management tools (e.g., Jira, Trello) for tracking progress.\n\n---\n\n### 6. **Team Roles**\n\n- **Operations Analysts (3):** Define themes, validate model outputs, use final dashboard.  \n- **Data Scientist/ML Engineer:** Develop anonymization scripts, train and validate AI model.  \n- **Project Manager:** Coordinate activities, ensure timeline adherence.  \n- **IT Support:** Assist with data access and secure storage.\n\n---\n\n### 7. **Success Criteria**\n\n- AI model achieves at least 80% accuracy in theme classification on validation data.  \n- Analysts can identify at least 3 recurring service issues from the AI-generated themes.  \n- All reviews processed are fully anonymized with zero PII leakage.  \n- Positive user feedback on dashboard usability and insights.\n\n---\n\n### 8. **Risks & Mitigation**\n\n| Risk                              | Mitigation                                      |\n|----------------------------------|------------------------------------------------|\n| Insufficient data volume/quality | Augment data with additional reviews or synthetic data |\n| Anonymization errors             | Implement manual review spot checks             |\n| Model underperformance           | Iterate model tuning and consider simpler models |\n| User adoption challenges         | Provide thorough training and documentation     |\n\n---\n\nIf you want, I can also help draft the anonymization script or suggest specific NLP models to use. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "Company: 45-person restaurant group; Intended Users: 3 Operations Analysts",
+            "stages_dated": "Week 1, Week 2, Week 3 with specific activities and deliverables",
+            "success_metric_named": "AI model achieves at least 80% accuracy in theme classification on validation data; Analysts can identify at least 3 recurring service issues",
+            "feedback_instrument_specified": "Gather feedback for next steps; Positive user feedback on dashboard usability and insights",
+            "human_checkpoint_named": "Anonymization errors mitigation: Implement manual review spot checks"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 7.272,
+          "usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 830,
+            "total_tokens": 908,
+            "cost": 0.0013592,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0013592,
+              "upstream_inference_prompt_cost": 3.12e-05,
+              "upstream_inference_completions_cost": 0.001328
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0013592
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.449,
+          "usage": {
+            "prompt_tokens": 1034,
+            "completion_tokens": 199,
+            "total_tokens": 1233,
+            "cost": 0.000732,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000732,
+              "upstream_inference_prompt_cost": 0.0004136,
+              "upstream_inference_completions_cost": 0.0003184
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.000732
+        }
+      }
+    },
+    {
+      "case_id": "C06",
+      "structured": {
+        "output": {
+          "objective": "Develop and implement draft project-brief checklists to ensure delivery constraints are consistently included",
+          "test_group": "4 account managers at the 20-person design studio",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Conduct initial interviews with account managers to identify common missing delivery constraints",
+              "owner": "Project Lead"
+            },
+            {
+              "date_or_deadline": "2026-10-17",
+              "task": "Draft checklist items focused on delivery constraints without referencing client contracts",
+              "owner": "Project Lead and Senior Designer"
+            },
+            {
+              "date_or_deadline": "2026-10-20",
+              "task": "Review and refine checklist with account managers for clarity and completeness",
+              "owner": "Project Lead and Account Managers"
+            },
+            {
+              "date_or_deadline": "2026-10-22",
+              "task": "Pilot checklist use in live project briefs by account managers",
+              "owner": "Account Managers"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Collect feedback and measure checklist effectiveness in capturing delivery constraints",
+              "owner": "Project Lead"
+            }
+          ],
+          "success_metric": "Increase inclusion of delivery constraints in project briefs from baseline 50% to target 90%",
+          "feedback_instrument": "Surveys and structured interviews with the 4 account managers at the end of the 2-week pilot to assess checklist usability and completeness",
+          "risks_and_mitigations": [
+            {
+              "risk": "Account managers may find the checklist too time-consuming or cumbersome",
+              "mitigation": "Keep checklist concise and involve account managers in drafting to ensure usability"
+            },
+            {
+              "risk": "Checklist may inadvertently reference client contracts violating constraints",
+              "mitigation": "Explicitly exclude any contract-related content and review checklist carefully before deployment"
+            }
+          ],
+          "human_approval_checkpoint": "Project Lead must review and approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "4 account managers at the 20-person design studio",
+            "stages_dated": "[{\"date_or_deadline\": \"2026-10-14\"}, {\"date_or_deadline\": \"2026-10-17\"}, {\"date_or_deadline\": \"2026-10-20\"}, {\"date_or_deadline\": \"2026-10-22\"}, {\"date_or_deadline\": \"2026-10-26\"}]",
+            "success_metric_named": "Increase inclusion of delivery constraints in project briefs from baseline 50% to target 90%",
+            "feedback_instrument_specified": "Surveys and structured interviews with the 4 account managers at the end of the 2-week pilot",
+            "human_checkpoint_named": "Project Lead must review and approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 4.877,
+          "usage": {
+            "prompt_tokens": 311,
+            "completion_tokens": 442,
+            "total_tokens": 753,
+            "cost": 0.0008316,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008316,
+              "upstream_inference_prompt_cost": 0.0001244,
+              "upstream_inference_completions_cost": 0.0007072
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008316
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.086,
+          "usage": {
+            "prompt_tokens": 586,
+            "completion_tokens": 252,
+            "total_tokens": 838,
+            "cost": 0.0006376,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0006376,
+              "upstream_inference_prompt_cost": 0.0002344,
+              "upstream_inference_completions_cost": 0.0004032
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0006376
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored for your 20-person design studio to address the issue of omitted delivery constraints in project briefs.\n\n---\n\n### AI Pilot Plan: Draft Project-Brief Checklists\n\n**Company Context:**  \n- 20-person design studio  \n- Intended users: 4 account managers  \n- Use case: Draft project-brief checklists  \n- Pain point: Briefs often omit delivery constraints  \n- Constraint: Do not upload client contracts  \n- Duration: 2 weeks  \n- Start date: 2026-10-12\n\n---\n\n### Objectives\n- Develop an AI-assisted checklist tool to help account managers ensure all critical delivery constraints are captured in project briefs.\n- Reduce the frequency of omitted delivery constraints in briefs.\n- Maintain data privacy by not uploading or processing client contracts.\n\n---\n\n### Scope\n- Focus on drafting and reviewing project-brief checklists.\n- Use internal knowledge and anonymized past briefs (without client contracts) to train or configure the AI.\n- Provide actionable checklist items highlighting delivery constraints (e.g., deadlines, milestones, formats, approvals).\n\n---\n\n### Pilot Timeline\n\n| Phase                     | Dates              | Activities                                                                                   |\n|---------------------------|--------------------|----------------------------------------------------------------------------------------------|\n| **Preparation**           | 2026-10-12 to 2026-10-14 | - Gather anonymized past project briefs (exclude contracts) <br> - Define key delivery constraints checklist items <br> - Select AI tool/platform (e.g., GPT-based API) |\n| **Development & Setup**   | 2026-10-15 to 2026-10-17 | - Configure AI model to generate checklist drafts <br> - Integrate AI tool with account managers’ workflow (e.g., via Slack, email, or project management tool) |\n| **Training & Onboarding** | 2026-10-18 to 2026-10-19 | - Train 4 account managers on using the AI checklist tool <br> - Collect initial feedback and adjust checklist templates |\n| **Pilot Execution**       | 2026-10-20 to 2026-10-25 | - Account managers use AI-generated checklists for all new project briefs <br> - Monitor checklist usage and completeness of delivery constraints |\n| **Evaluation & Wrap-up**  | 2026-10-26 to 2026-10-27 | - Collect feedback from account managers <br> - Analyze checklist effectiveness and reduction in omitted constraints <br> - Document lessons learned and next steps |\n\n---\n\n### Key Deliverables\n- AI-powered checklist generation tool integrated into account managers’ workflow.\n- Checklist template focused on delivery constraints.\n- Pilot report summarizing usage, feedback, and impact on brief quality.\n\n---\n\n### Success Metrics\n- Reduction in omitted delivery constraints in project briefs by at least 50%.\n- Positive user satisfaction score (e.g., >80% of account managers find the tool helpful).\n- Consistent use of AI-generated checklists in 90% of new briefs during pilot.\n\n---\n\n### Data Privacy & Compliance\n- No client contracts or sensitive documents will be uploaded to the AI platform.\n- Use only anonymized or internal documents for AI training/configuration.\n- Ensure compliance with company data policies and relevant regulations.\n\n---\n\n### Risks & Mitigations\n| Risk                                | Mitigation                                      |\n|------------------------------------|------------------------------------------------|\n| AI generates incomplete checklists | Manual review by account managers initially    |\n| Resistance to new tool adoption    | Provide training and highlight time savings    |\n| Data privacy concerns              | Strictly exclude client contracts from AI input|\n\n---\n\nIf you want, I can also help draft the checklist template or recommend AI tools/platforms suitable for this pilot. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "Intended users: 4 account managers",
+            "stages_dated": "Preparation: 2026-10-12 to 2026-10-14; Development & Setup: 2026-10-15 to 2026-10-17",
+            "success_metric_named": "Reduction in omitted delivery constraints in project briefs by at least 50%",
+            "feedback_instrument_specified": "Collect feedback from account managers",
+            "human_checkpoint_named": "Manual review by account managers initially"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 9.778,
+          "usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 761,
+            "total_tokens": 837,
+            "cost": 0.001248,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.001248,
+              "upstream_inference_prompt_cost": 3.04e-05,
+              "upstream_inference_completions_cost": 0.0012176
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.001248
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.592,
+          "usage": {
+            "prompt_tokens": 965,
+            "completion_tokens": 185,
+            "total_tokens": 1150,
+            "cost": 0.000682,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000682,
+              "upstream_inference_prompt_cost": 0.000386,
+              "upstream_inference_completions_cost": 0.000296
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.000682
+        }
+      }
+    },
+    {
+      "case_id": "C07",
+      "structured": {
+        "output": {
+          "objective": "Create standardized maintenance-request acknowledgement messages to ensure consistent and professional communication by service coordinators",
+          "test_group": "6 service coordinators at the property-services firm",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Gather current maintenance-request acknowledgement messages and identify inconsistencies",
+              "owner": "Project Analyst"
+            },
+            {
+              "date_or_deadline": "2026-10-17",
+              "task": "Draft standardized acknowledgement message templates adhering to the constraint of excluding tenant names and addresses",
+              "owner": "Communications Specialist"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Review and refine message templates with input from service coordinators",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-22",
+              "task": "Implement the standardized messages in the coordinators’ workflow and provide training",
+              "owner": "Training Coordinator"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Collect feedback and measure message consistency improvements",
+              "owner": "Quality Assurance Lead"
+            }
+          ],
+          "success_metric": "Achieve at least 90% consistency in maintenance-request acknowledgement messages across all coordinators, improving from a baseline of approximately 50%",
+          "feedback_instrument": "Collect qualitative and quantitative feedback from all 6 service coordinators at the end of week 2, including message samples and a survey on ease of use and clarity",
+          "risks_and_mitigations": [
+            {
+              "risk": "Coordinators may inadvertently include tenant names or addresses despite constraints",
+              "mitigation": "Include clear guidelines and examples in training and implement a checklist for message review before sending"
+            },
+            {
+              "risk": "Resistance to adopting standardized messages due to preference for personalized wording",
+              "mitigation": "Involve coordinators in the drafting and review stages to increase buy-in and allow limited customization within guidelines"
+            }
+          ],
+          "human_approval_checkpoint": "Project Manager must review and approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "6 service coordinators at the property-services firm",
+            "stages_dated": "2026-10-14, 2026-10-17, 2026-10-19, 2026-10-22, 2026-10-26",
+            "success_metric_named": "Achieve at least 90% consistency ... improving from a baseline of approximately 50%",
+            "feedback_instrument_specified": "Collect qualitative and quantitative feedback ... including ... a survey on ease of use and clarity",
+            "human_checkpoint_named": "Project Manager must review and approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 7.014,
+          "usage": {
+            "prompt_tokens": 310,
+            "completion_tokens": 469,
+            "total_tokens": 779,
+            "cost": 0.0008744,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008744,
+              "upstream_inference_prompt_cost": 0.000124,
+              "upstream_inference_completions_cost": 0.0007504
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008744
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.613,
+          "usage": {
+            "prompt_tokens": 613,
+            "completion_tokens": 206,
+            "total_tokens": 819,
+            "cost": 0.0005748,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005748,
+              "upstream_inference_prompt_cost": 0.0002452,
+              "upstream_inference_completions_cost": 0.0003296
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005748
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here’s an AI pilot plan tailored to your company’s situation:\n\n---\n\n### AI Pilot Plan: Maintenance-Request Acknowledgement Messaging  \n**Company:** 55-person property-services firm  \n**Use Case:** Draft maintenance-request acknowledgement messages  \n**Intended Users:** 6 service coordinators  \n**Duration:** 2 weeks  \n**Start Date:** 2026-10-12  \n**Pain Point:** Inconsistent response wording  \n**Constraint:** No tenant names or addresses in messages  \n\n---\n\n#### 1. **Objectives**\n- Standardize the tone and wording of maintenance-request acknowledgement messages.\n- Improve response consistency across all service coordinators.\n- Ensure compliance with privacy constraints (no tenant names or addresses).\n- Evaluate AI-generated drafts for accuracy, tone, and usability.\n\n---\n\n#### 2. **Scope**\n- AI will generate draft acknowledgement messages for maintenance requests.\n- Messages will exclude any personally identifiable information (tenant names, addresses).\n- Service coordinators will review, edit if necessary, and send messages.\n- Feedback will be collected to refine AI outputs.\n\n---\n\n#### 3. **Pilot Setup**\n\n**a. AI Tool Selection:**  \nChoose an AI language model capable of generating professional, consistent message drafts with customizable tone and privacy filters.\n\n**b. Training/Customization:**  \n- Provide sample messages that reflect desired tone and style.  \n- Define rules to exclude tenant names and addresses automatically.  \n- Include placeholders or generic terms (e.g., “your unit,” “your request”).\n\n**c. User Access:**  \n- Provide 6 service coordinators with access to the AI tool.  \n- Train coordinators on how to use the AI drafts and provide feedback.\n\n---\n\n#### 4. **Process Workflow**\n\n1. **Request Receipt:** Coordinator receives a maintenance request.  \n2. **AI Draft Generation:** Coordinator inputs request details (excluding tenant name/address) into AI tool.  \n3. **Draft Review:** AI generates an acknowledgement message draft.  \n4. **Edit & Send:** Coordinator reviews and edits if needed, then sends the message.  \n5. **Feedback Submission:** Coordinator rates the draft’s usefulness and notes any issues.\n\n---\n\n#### 5. **Evaluation Metrics**\n\n- **Consistency:** Measure variation in wording across coordinators before and after pilot.  \n- **User Satisfaction:** Collect coordinator feedback on draft quality and ease of use.  \n- **Time Efficiency:** Track time taken to draft messages pre- and post-AI implementation.  \n- **Compliance:** Verify no tenant names or addresses appear in messages.\n\n---\n\n#### 6. **Timeline**\n\n| Date           | Activity                              |\n|----------------|-------------------------------------|\n| 2026-10-05     | Finalize AI tool and customization  |\n| 2026-10-08     | Train service coordinators           |\n| 2026-10-12     | Pilot start                         |\n| 2026-10-12 to 2026-10-26 | Daily use and feedback collection  |\n| 2026-10-27     | Analyze results and prepare report  |\n\n---\n\n#### 7. **Risks & Mitigations**\n\n- **Risk:** AI drafts may occasionally include sensitive info.  \n  **Mitigation:** Implement strict input controls and automated content filters.\n\n- **Risk:** Coordinators may resist adopting AI drafts.  \n  **Mitigation:** Emphasize time savings and consistency benefits; provide support.\n\n---\n\n#### 8. **Success Criteria**\n\n- At least 80% of AI-generated drafts require minimal edits.  \n- Coordinators report improved confidence in message consistency.  \n- No breaches of tenant privacy in pilot messages.  \n- Reduction in average message drafting time by 30%.\n\n---\n\nIf you want, I can also help draft sample acknowledgement message templates or a training guide for the coordinators. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 0
+          },
+          "evidence": {
+            "test_group_named": "6 service coordinators",
+            "stages_dated": "2026-10-05, 2026-10-08, 2026-10-12, 2026-10-12 to 2026-10-26, 2026-10-27",
+            "success_metric_named": "\"At least 80% of AI-generated drafts require minimal edits\", \"Reduction in average message drafting time by 30%\"",
+            "feedback_instrument_specified": "Coordinator rates the draft’s usefulness and notes any issues",
+            "human_checkpoint_named": "not found"
+          },
+          "total": 4
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.393,
+          "usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 776,
+            "total_tokens": 851,
+            "cost": 0.0012716,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0012716,
+              "upstream_inference_prompt_cost": 3e-05,
+              "upstream_inference_completions_cost": 0.0012416
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0012716
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.503,
+          "usage": {
+            "prompt_tokens": 980,
+            "completion_tokens": 203,
+            "total_tokens": 1183,
+            "cost": 0.0007168,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0007168,
+              "upstream_inference_prompt_cost": 0.000392,
+              "upstream_inference_completions_cost": 0.0003248
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0007168
+        }
+      }
+    },
+    {
+      "case_id": "C08",
+      "structured": {
+        "output": {
+          "objective": "Develop and test a summarisation tool to accurately capture and highlight action items from synthetic supplier meeting notes for procurement staff",
+          "test_group": "4 procurement staff members",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Gather and prepare synthetic meeting notes reflecting typical supplier meetings",
+              "owner": "Project Analyst"
+            },
+            {
+              "date_or_deadline": "2026-10-17",
+              "task": "Develop initial summarisation prototype focusing on extracting action items",
+              "owner": "AI Developer"
+            },
+            {
+              "date_or_deadline": "2026-10-20",
+              "task": "Conduct user testing sessions with procurement staff using the prototype",
+              "owner": "UX Researcher"
+            },
+            {
+              "date_or_deadline": "2026-10-23",
+              "task": "Collect and analyze feedback to refine summarisation accuracy and usability",
+              "owner": "Data Analyst"
+            },
+            {
+              "date_or_deadline": "2026-10-26",
+              "task": "Finalize summarisation tool and prepare deployment recommendations",
+              "owner": "Project Manager"
+            }
+          ],
+          "success_metric": "Achieve at least 90% accuracy in capturing action items from meeting notes, improving from a baseline of 60%",
+          "feedback_instrument": "Structured interviews and usability surveys conducted with all 4 procurement staff immediately after testing sessions to assess accuracy, clarity, and usefulness of summaries",
+          "risks_and_mitigations": [
+            {
+              "risk": "Synthetic meeting notes may not fully represent real meeting complexities",
+              "mitigation": "Iteratively refine synthetic notes based on procurement staff input to better mimic real scenarios"
+            },
+            {
+              "risk": "Procurement staff may find the summarisation tool difficult to use",
+              "mitigation": "Incorporate user feedback early and provide training sessions to improve usability"
+            }
+          ],
+          "human_approval_checkpoint": "Project owner must review and approve the plan before development begins"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "4 procurement staff members",
+            "stages_dated": "2026-10-14, 2026-10-17",
+            "success_metric_named": "Achieve at least 90% accuracy ... improving from a baseline of 60%",
+            "feedback_instrument_specified": "Structured interviews and usability surveys conducted with all 4 procurement staff immediately after testing sessions",
+            "human_checkpoint_named": "Project owner must review and approve the plan before development begins"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 4.493,
+          "usage": {
+            "prompt_tokens": 311,
+            "completion_tokens": 445,
+            "total_tokens": 756,
+            "cost": 0.0008364,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0008364,
+              "upstream_inference_prompt_cost": 0.0001244,
+              "upstream_inference_completions_cost": 0.000712
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0008364
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.351,
+          "usage": {
+            "prompt_tokens": 589,
+            "completion_tokens": 177,
+            "total_tokens": 766,
+            "cost": 0.0005188,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005188,
+              "upstream_inference_prompt_cost": 0.0002356,
+              "upstream_inference_completions_cost": 0.0002832
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005188
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored for your company situation:\n\n---\n\n### AI Pilot Plan: Summarising Supplier Meeting Notes\n\n**Company:** 35-person wholesale distributor  \n**Use Case:** Summarise supplier meeting notes  \n**Intended Users:** 4 procurement staff  \n**Duration:** 2 weeks  \n**Start Date:** 2026-10-12  \n**Pain Point:** Action items are missed after meetings  \n**Constraint:** Use synthetic meeting notes only\n\n---\n\n#### 1. **Objective**\nTo implement and evaluate an AI-powered meeting notes summarisation tool that highlights key points and action items from supplier meetings, reducing missed follow-ups and improving procurement team efficiency.\n\n---\n\n#### 2. **Scope**\n- Focus on supplier meeting notes summarisation.\n- Use synthetic meeting notes generated to simulate real supplier meetings.\n- Pilot with 4 procurement staff members.\n- Duration: 2 weeks starting from 2026-10-12.\n\n---\n\n#### 3. **Pilot Setup**\n\n**3.1 AI Tool Selection**  \n- Choose an AI summarisation tool capable of extracting key points and action items from text.\n- Ensure the tool supports synthetic data input and can be integrated with existing note-taking or document systems if needed.\n\n**3.2 Synthetic Meeting Notes Preparation**  \n- Generate a set of synthetic meeting notes reflecting typical supplier meetings.\n- Include various scenarios: negotiation points, delivery schedules, quality issues, pricing discussions, and agreed action items.\n- Prepare at least 10 synthetic meeting notes documents for the pilot.\n\n**3.3 User Training**  \n- Conduct a 1-hour training session for the 4 procurement staff on how to use the AI tool.\n- Explain the purpose, how to input notes, and how to interpret summaries and action items.\n\n---\n\n#### 4. **Pilot Execution**\n\n**4.1 Daily Workflow**  \n- Each day, procurement staff will input one synthetic meeting note into the AI tool.\n- Review the AI-generated summary and action items.\n- Compare with the original notes to verify completeness and accuracy.\n\n**4.2 Feedback Collection**  \n- Procurement staff to provide daily feedback on:\n  - Accuracy of summaries\n  - Clarity and completeness of action items\n  - Ease of use\n  - Any missed or incorrect information\n\n**4.3 Monitoring & Support**  \n- Assign a project lead to monitor usage and address any technical issues.\n- Hold a mid-pilot check-in meeting (around day 7) to discuss progress and make adjustments.\n\n---\n\n#### 5. **Evaluation Criteria**\n\n- **Accuracy:** Percentage of correctly identified action items and key points.\n- **User Satisfaction:** Feedback ratings on usefulness and ease of use.\n- **Efficiency:** Time saved in reviewing and following up on meeting notes.\n- **Missed Actions:** Reduction in missed action items compared to baseline (if available).\n\n---\n\n#### 6. **Post-Pilot Activities**\n\n- Analyze feedback and performance metrics.\n- Identify improvements needed in AI summarisation or workflow integration.\n- Decide on scaling the solution to real meeting notes and broader user base.\n- Prepare a pilot report summarising findings and recommendations.\n\n---\n\n#### 7. **Risks & Mitigations**\n\n| Risk                                | Mitigation                                  |\n|------------------------------------|---------------------------------------------|\n| Synthetic notes may not fully mimic real meetings | Use diverse and realistic synthetic scenarios |\n| AI summarisation inaccuracies      | Manual review during pilot; feedback loop for improvement |\n| User resistance to new tool        | Provide clear training and highlight benefits |\n\n---\n\nIf you want, I can also help draft synthetic meeting notes samples or recommend specific AI tools for this pilot. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 0,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 0
+          },
+          "evidence": {
+            "test_group_named": "Pilot with 4 procurement staff members.",
+            "stages_dated": "Duration: 2 weeks starting from 2026-10-12; mid-pilot check-in meeting (around day 7)",
+            "success_metric_named": "Accuracy: Percentage of correctly identified action items and key points; ... compared to baseline (if available) - baseline not stated",
+            "feedback_instrument_specified": "Procurement staff to provide daily feedback on: ...",
+            "human_checkpoint_named": "not found"
+          },
+          "total": 3
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.877,
+          "usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 737,
+            "total_tokens": 813,
+            "cost": 0.0012096,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0012096,
+              "upstream_inference_prompt_cost": 3.04e-05,
+              "upstream_inference_completions_cost": 0.0011792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0012096
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.664,
+          "usage": {
+            "prompt_tokens": 941,
+            "completion_tokens": 185,
+            "total_tokens": 1126,
+            "cost": 0.0006724,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0006724,
+              "upstream_inference_prompt_cost": 0.0003764,
+              "upstream_inference_completions_cost": 0.000296
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0006724
+        }
+      }
+    },
+    {
+      "case_id": "C09",
+      "structured": {
+        "output": {
+          "objective": "Create and implement a standardized internal editorial handover summary process to improve context retention between editors",
+          "test_group": "5 editors in the editorial team",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Conduct initial meeting with editors to gather detailed requirements and pain points related to editorial handovers",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-10-19",
+              "task": "Draft a standardized editorial handover summary template ensuring no student work or personal information is included",
+              "owner": "Lead Editor"
+            },
+            {
+              "date_or_deadline": "2026-10-23",
+              "task": "Pilot the handover summary template with the 5 editors on active projects",
+              "owner": "Editorial Team"
+            },
+            {
+              "date_or_deadline": "2026-10-28",
+              "task": "Collect feedback from editors on usability, completeness, and clarity of the handover summaries",
+              "owner": "Project Manager"
+            },
+            {
+              "date_or_deadline": "2026-11-02",
+              "task": "Refine the handover summary template and process based on feedback and prepare final documentation",
+              "owner": "Lead Editor"
+            }
+          ],
+          "success_metric": "Increase in editor-reported context retention during handovers from baseline 50% to target 85%",
+          "feedback_instrument": "Structured survey and one-on-one interviews with the 5 editors conducted after the pilot phase on 2026-10-28, focusing on clarity, completeness, and ease of use of the handover summaries",
+          "risks_and_mitigations": [
+            {
+              "risk": "Editors may not consistently use the new handover summary template",
+              "mitigation": "Provide training and emphasize benefits during initial meeting; monitor usage and follow up individually"
+            },
+            {
+              "risk": "Template may inadvertently include restricted student or personal information",
+              "mitigation": "Review template content carefully with compliance officer before pilot; include clear guidelines on excluded information"
+            }
+          ],
+          "human_approval_checkpoint": "Project Manager and Lead Editor must review and approve the plan before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "5 editors in the editorial team",
+            "stages_dated": "2026-10-14, 2026-10-19, 2026-10-23, 2026-10-28, 2026-11-02",
+            "success_metric_named": "Increase in editor-reported context retention during handovers from baseline 50% to target 85%",
+            "feedback_instrument_specified": "Structured survey and one-on-one interviews with the 5 editors conducted after the pilot phase on 2026-10-28",
+            "human_checkpoint_named": "Project Manager and Lead Editor must review and approve the plan before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.858,
+          "usage": {
+            "prompt_tokens": 310,
+            "completion_tokens": 486,
+            "total_tokens": 796,
+            "cost": 0.0009016,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0009016,
+              "upstream_inference_prompt_cost": 0.000124,
+              "upstream_inference_completions_cost": 0.0007776
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0009016
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 4.11,
+          "usage": {
+            "prompt_tokens": 630,
+            "completion_tokens": 217,
+            "total_tokens": 847,
+            "cost": 0.0005992,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005992,
+              "upstream_inference_prompt_cost": 0.000252,
+              "upstream_inference_completions_cost": 0.0003472
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005992
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here is a detailed AI pilot plan tailored for your 70-person education publishing company to address the editorial handover summaries use case.\n\n---\n\n### AI Pilot Plan: Internal Editorial Handover Summaries\n\n**Company:** 70-person education publisher  \n**Use Case:** Draft internal editorial handover summaries  \n**Intended Users:** 5 editors  \n**Duration:** 3 weeks  \n**Pain Point:** Projects lose context between editors  \n**Constraint:** No student work or personal information included  \n**Start Date:** 2026-10-12\n\n---\n\n### 1. **Objectives**\n\n- Improve continuity and context retention between editors during project handovers.\n- Reduce time editors spend drafting handover summaries.\n- Ensure summaries are clear, concise, and free of sensitive student or personal data.\n- Evaluate AI’s effectiveness and user satisfaction in supporting editorial workflows.\n\n---\n\n### 2. **Scope**\n\n- Pilot limited to 5 editors handling ongoing editorial projects.\n- AI tool will assist in drafting handover summaries based on project notes, editorial comments, and manuscript status.\n- No use of student work or personal information in inputs or outputs.\n- Focus on internal documents only.\n\n---\n\n### 3. **AI Tool Selection & Setup**\n\n- Choose an AI writing assistant with strong summarization and context retention capabilities.\n- Configure AI to exclude any fields or data containing student or personal information.\n- Train or fine-tune AI on anonymized past editorial handover summaries (if available) to align with company style and terminology.\n- Integrate AI tool with existing editorial project management or document systems if possible.\n\n---\n\n### 4. **Pilot Workflow**\n\n| Step | Description | Responsible | Notes |\n|-------|-------------|-------------|-------|\n| 1 | Identify ongoing projects requiring handover summaries | Editors | Select 1-2 projects per editor |\n| 2 | Editors input project notes, comments, and status updates into AI tool | Editors | Ensure no student/personal data included |\n| 3 | AI drafts handover summary | AI Tool | Editor reviews and edits draft |\n| 4 | Editor finalizes and shares summary with next editor | Editors | Collect feedback on AI draft quality |\n| 5 | Weekly check-in meetings to discuss progress and issues | Project Lead & Editors | Adjust prompts or process as needed |\n\n---\n\n### 5. **Data Privacy & Compliance**\n\n- Strictly exclude any student work or personal information from AI inputs.\n- Use anonymized or aggregated data only.\n- Ensure AI vendor complies with relevant data protection regulations.\n- Store AI-generated summaries securely within company systems.\n\n---\n\n### 6. **Success Metrics**\n\n- Reduction in time spent drafting handover summaries (target: 30% less time).\n- Editor satisfaction with AI-generated drafts (target: average rating ≥ 4/5).\n- Reduction in context loss or misunderstandings reported in handovers.\n- Number of edits required on AI drafts (target: decreasing trend over pilot).\n\n---\n\n### 7. **Risks & Mitigations**\n\n| Risk | Mitigation |\n|-------|------------|\n| AI generates inaccurate or incomplete summaries | Editors review and edit all AI drafts before sharing |\n| Inclusion of sensitive data accidentally | Training and clear guidelines for editors on data input |\n| Resistance to AI adoption | Provide training and highlight time-saving benefits |\n| Technical integration issues | Pilot with standalone tool initially, then integrate |\n\n---\n\n### 8. **Timeline**\n\n| Week | Activities |\n|-------|------------|\n| Week 1 (2026-10-12 to 2026-10-18) | Setup AI tool, train editors, select pilot projects |\n| Week 2 (2026-10-19 to 2026-10-25) | Begin drafting summaries with AI, collect feedback |\n| Week 3 (2026-10-26 to 2026-11-01) | Continue pilot, refine process, final evaluation |\n\n---\n\n### 9. **Next Steps Post-Pilot**\n\n- Analyze pilot results and editor feedback.\n- Decide on broader rollout or adjustments.\n- Explore integration with editorial workflow tools.\n- Consider expanding AI use to other editorial tasks.\n\n---\n\nIf you want, I can help draft communication templates or training materials for the editors as well. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 0,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "Intended Users: 5 editors",
+            "stages_dated": "Week 1 (2026-10-12 to 2026-10-18), Week 2 (2026-10-19 to 2026-10-25), Week 3 (2026-10-26 to 2026-11-01)",
+            "success_metric_named": "Reduction in time spent drafting handover summaries (target: 30% less time). Editor satisfaction with AI-generated drafts (target: average rating ≥ 4/5).",
+            "feedback_instrument_specified": "not found",
+            "human_checkpoint_named": "Editors review and edit all AI drafts before sharing"
+          },
+          "total": 4
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.551,
+          "usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 864,
+            "total_tokens": 939,
+            "cost": 0.0014124,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0014124,
+              "upstream_inference_prompt_cost": 3e-05,
+              "upstream_inference_completions_cost": 0.0013824
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0014124
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 4.028,
+          "usage": {
+            "prompt_tokens": 1068,
+            "completion_tokens": 224,
+            "total_tokens": 1292,
+            "cost": 0.0007856,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0007856,
+              "upstream_inference_prompt_cost": 0.0004272,
+              "upstream_inference_completions_cost": 0.0003584
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0007856
+        }
+      }
+    },
+    {
+      "case_id": "C10",
+      "structured": {
+        "output": {
+          "objective": "Create a standardized post-event feedback survey for consistent data collection across all events",
+          "test_group": "3 event managers",
+          "stages": [
+            {
+              "date_or_deadline": "2026-10-14",
+              "task": "Gather existing feedback forms and identify inconsistencies",
+              "owner": "Project Lead"
+            },
+            {
+              "date_or_deadline": "2026-10-18",
+              "task": "Draft a standardized set of post-event survey questions without collecting participant contact details",
+              "owner": "Survey Specialist"
+            },
+            {
+              "date_or_deadline": "2026-10-21",
+              "task": "Review draft survey with 3 event managers and incorporate their feedback",
+              "owner": "Project Lead"
+            },
+            {
+              "date_or_deadline": "2026-10-25",
+              "task": "Finalize and approve the standardized post-event feedback survey",
+              "owner": "Project Lead and Event Managers"
+            }
+          ],
+          "success_metric": "Achieve at least 90% completion rate of the standardized survey across events, improving from a baseline of 65%",
+          "feedback_instrument": "Collect qualitative feedback from the 3 event managers after the pilot use of the survey over 2 weeks, focusing on ease of use and relevance of questions",
+          "risks_and_mitigations": [
+            {
+              "risk": "Event managers may resist adopting the new standardized survey",
+              "mitigation": "Involve event managers early in the drafting process to ensure their input and buy-in"
+            },
+            {
+              "risk": "Survey questions may not capture all necessary feedback due to constraint of not collecting contact details",
+              "mitigation": "Carefully design questions to focus on event experience and satisfaction metrics only"
+            }
+          ],
+          "human_approval_checkpoint": "Project Lead and Event Managers must review and approve the final survey before implementation"
+        },
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 1,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "3 event managers",
+            "stages_dated": "dates: 2026-10-14, 2026-10-18, 2026-10-21, 2026-10-25",
+            "success_metric_named": "Achieve at least 90% completion rate ... improving from a baseline of 65%",
+            "feedback_instrument_specified": "Collect qualitative feedback from the 3 event managers after the pilot use of the survey over 2 weeks",
+            "human_checkpoint_named": "Project Lead and Event Managers must review and approve the final survey before implementation"
+          },
+          "total": 5
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 4.586,
+          "usage": {
+            "prompt_tokens": 310,
+            "completion_tokens": 410,
+            "total_tokens": 720,
+            "cost": 0.00078,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00078,
+              "upstream_inference_prompt_cost": 0.000124,
+              "upstream_inference_completions_cost": 0.000656
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.00078
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 2.251,
+          "usage": {
+            "prompt_tokens": 561,
+            "completion_tokens": 203,
+            "total_tokens": 764,
+            "cost": 0.0005492,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0005492,
+              "upstream_inference_prompt_cost": 0.0002244,
+              "upstream_inference_completions_cost": 0.0003248
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0005492
+        }
+      },
+      "raw_baseline": {
+        "output": "Certainly! Here's a detailed AI pilot plan tailored for your 28-person events agency to address the inconsistency in post-event feedback surveys.\n\n---\n\n### AI Pilot Plan: Standardizing Post-Event Feedback Survey Questions\n\n**Company:** 28-person Events Agency  \n**Use Case:** Draft post-event feedback survey questions  \n**Intended Users:** 3 Event Managers  \n**Duration:** 2 weeks  \n**Start Date:** 2026-10-12  \n**Pain Point:** Feedback forms are inconsistent  \n**Constraint:** Do not collect participant contact details\n\n---\n\n### Objectives\n- Develop a consistent, standardized set of post-event feedback survey questions.\n- Ensure surveys capture actionable insights without collecting any participant contact information.\n- Improve efficiency and quality of feedback forms drafted by event managers.\n\n---\n\n### Pilot Scope\n- Focus on creating a reusable template of survey questions for all event types.\n- Use AI tools (e.g., GPT-based assistant) to generate, refine, and standardize survey questions.\n- Test the AI-generated survey questions across 3 upcoming events managed by the 3 event managers.\n\n---\n\n### Pilot Phases & Timeline\n\n| Phase                      | Activities                                                                 | Timeline           |\n|----------------------------|----------------------------------------------------------------------------|--------------------|\n| **Preparation**            | - Brief event managers on pilot goals and AI tool usage                   | 2026-10-12 to 2026-10-13 |\n|                            | - Collect existing feedback forms for analysis                            |                    |\n| **AI Survey Drafting**      | - Use AI to generate draft survey questions based on best practices       | 2026-10-14 to 2026-10-16 |\n|                            | - Ensure questions avoid collecting contact details                       |                    |\n|                            | - Review and refine drafts collaboratively                                |                    |\n| **Pilot Implementation**    | - Deploy standardized survey questions in 3 upcoming events              | 2026-10-17 to 2026-10-23 |\n|                            | - Collect feedback from event managers on question relevance and clarity |                    |\n| **Evaluation & Iteration**  | - Analyze survey response quality and consistency                         | 2026-10-24 to 2026-10-25 |\n|                            | - Gather event managers’ feedback on AI tool usability                    |                    |\n|                            | - Refine survey questions and finalize template                          |                    |\n| **Wrap-up & Next Steps**    | - Present pilot results to leadership                                    | 2026-10-26          |\n|                            | - Plan for agency-wide rollout if successful                             |                    |\n\n---\n\n### AI Tool Features to Leverage\n- Natural language generation for question drafting.\n- Contextual understanding to tailor questions to different event types.\n- Compliance check to ensure no personal contact info is requested.\n- Collaborative editing and version control.\n\n---\n\n### Success Metrics\n- Consistency: Reduction in variability of survey questions across events.\n- Usability: Positive feedback from event managers on AI-generated drafts.\n- Compliance: Zero instances of participant contact details requested.\n- Response Quality: Improved clarity and relevance of participant feedback.\n\n---\n\n### Risks & Mitigations\n- **Risk:** AI-generated questions may not fully align with event specifics.  \n  **Mitigation:** Include manual review and refinement by event managers.\n  \n- **Risk:** Resistance to adopting AI tools.  \n  **Mitigation:** Provide training and highlight time-saving benefits.\n\n---\n\nIf you want, I can also help draft example survey questions or recommend specific AI tools for this pilot. Would you like that?",
+        "judgment": {
+          "scores": {
+            "test_group_named": 1,
+            "stages_dated": 1,
+            "success_metric_named": 0,
+            "feedback_instrument_specified": 1,
+            "human_checkpoint_named": 1
+          },
+          "evidence": {
+            "test_group_named": "Intended Users: 3 Event Managers",
+            "stages_dated": "Preparation: 2026-10-12 to 2026-10-13; AI Survey Drafting: 2026-10-14 to 2026-10-16",
+            "success_metric_named": "Consistency: Reduction in variability of survey questions across events. Usability: Positive feedback from event managers on AI-generated drafts. Compliance: Zero instances of participant contact details requested. Response Quality: Improved clarity and relevance of participant feedback.",
+            "feedback_instrument_specified": "Use Case: Draft post-event feedback survey questions; Collect feedback from event managers on question relevance and clarity",
+            "human_checkpoint_named": "Mitigation: Include manual review and refinement by event managers."
+          },
+          "total": 4
+        },
+        "generation": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 6.325,
+          "usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 713,
+            "total_tokens": 788,
+            "cost": 0.0011708,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0011708,
+              "upstream_inference_prompt_cost": 3e-05,
+              "upstream_inference_completions_cost": 0.0011408
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0011708
+        },
+        "judging": {
+          "model": "openai/gpt-4.1-mini",
+          "latency_seconds": 3.268,
+          "usage": {
+            "prompt_tokens": 917,
+            "completion_tokens": 237,
+            "total_tokens": 1154,
+            "cost": 0.000746,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000746,
+              "upstream_inference_prompt_cost": 0.0003668,
+              "upstream_inference_completions_cost": 0.0003792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.000746
+        }
+      }
+    }
+  ]
+}

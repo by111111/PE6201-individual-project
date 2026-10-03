@@ -45,15 +45,7 @@ streamlit run app.py
 
 Windows PowerShell uses `.venv\Scripts\Activate.ps1` and `$env:OPENROUTER_API_KEY='your-key'`. The app opens at `http://localhost:8501`. Use only fictional or non-confidential inputs. Never commit a real key; `.env` and Streamlit secrets are ignored.
 
-### 3. Run tests
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-These tests require no API key. GitHub Actions executes the same command on pushes and pull requests.
-
-### 4. Inspect or reproduce the evaluation
+### 3. Inspect or reproduce the evaluation
 
 The committed artifacts are enough to audit the completed experiment without spending money. To repeat the 40 API calls (20 generations plus 20 automated scoring calls):
 
@@ -98,7 +90,6 @@ The same ten cases and model were used in both conditions. The manually adjudica
 ├── app.py                         # Streamlit interface and presentation layer
 ├── pilot_planner/                 # validation, prompt construction, provider, parsing
 ├── scripts/evaluate.py            # two-condition experiment runner
-├── tests/                         # dependency-free unit tests
 ├── data/                          # frozen synthetic cases and provenance
 ├── evals/                         # protocol and binary scoring rubric
 ├── results/                       # raw evidence, scan-friendly scores, workbook

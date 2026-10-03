@@ -70,7 +70,8 @@ def main():
     )
     artifact = {
         "method": "Same 10 synthetic cases; structured form + fixed system prompt versus direct raw-model request. Both outputs scored by the same strict five-item 0/1 rubric, with evidence retained for review.",
-        "summary": {"n_cases": len(results), "structured_mean": structured_mean, "raw_mean": raw_mean, "mean_difference": structured_mean - raw_mean, "total_api_cost_usd": total_cost},
+        "automated_judge_summary": {"n_cases": len(results), "structured_mean": structured_mean, "raw_mean": raw_mean, "mean_difference": structured_mean - raw_mean, "total_api_cost_usd": total_cost},
+        "manual_adjudication": {"status": "not produced by this script", "instructions": "Apply evals/rubric.md to the saved outputs and record final scores in results/final_scores.csv."},
         "results": results,
     }
     Path(args.output).write_text(json.dumps(artifact, indent=2, ensure_ascii=False), encoding="utf-8")

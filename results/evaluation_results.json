@@ -1,11 +1,18 @@
 {
   "method": "Same 10 synthetic cases; structured form + fixed system prompt versus direct raw-model request. Both outputs scored by the same strict five-item 0/1 rubric, with evidence retained for review.",
-  "summary": {
+  "automated_judge_summary": {
     "n_cases": 10,
     "structured_mean": 5.0,
     "raw_mean": 4.0,
     "mean_difference": 1.0,
     "total_api_cost_usd": 0.0344564
+  },
+  "final_manual_adjudication_summary": {
+    "source": "results/final_scores.csv and results/PE6201_Evaluation_Results.xlsx",
+    "structured_mean": 5.0,
+    "raw_mean": 3.1,
+    "mean_difference": 1.9,
+    "note": "The automated judge was too permissive; saved outputs were rescored against evals/rubric.md without altering the original outputs or judge evidence."
   },
   "results": [
     {

@@ -7,12 +7,13 @@ A Streamlit web form turns a low-risk SME use case into a structured, human-revi
 **Live demo:** [https://pe6201-ai-pilot-planner.streamlit.app/](https://pe6201-ai-pilot-planner.streamlit.app/)
 
 **Repository status:** public, reproducible prototype. The code, synthetic data, evaluation procedure, raw outputs, final adjudicated scores, and product documentation are checked in.
-
 ## Submission map
+
 
 | Requirement | Evidence |
 |---|---|
 | Public interactive demo | [Open the Streamlit app](https://pe6201-ai-pilot-planner.streamlit.app/) |
+| Recorded demo video | [`demo.mp4`](demo.mp4) |
 | Original problem statement | [`docs/PE6201-Enterprise-AI-Pilot-Planning-Assistant.pdf`](docs/PE6201-Enterprise-AI-Pilot-Planning-Assistant.pdf) |
 | Product documentation | [`docs/product-documentation.md`](docs/product-documentation.md) |
 | Runnable code | [`app.py`](app.py), [`pilotplanner/`](pilotplanner/) |

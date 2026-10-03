@@ -4,12 +4,15 @@
 
 A Streamlit web form turns a low-risk SME use case into a structured, human-reviewable AI pilot plan. The form and fixed system prompt require a named test group, dated stages, a measurable target with a baseline, a feedback instrument, and a human approval gate. The system creates a draft; it never authorises a pilot or replaces business judgment.
 
+**Live demo:** [https://pe6201-ai-pilot-planner.streamlit.app/](https://pe6201-ai-pilot-planner.streamlit.app/)
+
 **Repository status:** public, reproducible prototype. The code, synthetic data, evaluation procedure, raw outputs, final adjudicated scores, report, product documentation, and recording guide are checked in. The student must still record and add the face-and-screen demo described in [`video/README.md`](video/README.md).
 
 ## Submission map
 
 | Requirement | Evidence |
 |---|---|
+| Public interactive demo | [Open the Streamlit app](https://pe6201-ai-pilot-planner.streamlit.app/) |
 | Final report (about 1,200 words) | [`docs/analysis.md`](docs/analysis.md) |
 | Original problem statement | [`docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf`](docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf) |
 | Product documentation | [`docs/product_documentation.md`](docs/product_documentation.md) |

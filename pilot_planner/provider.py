@@ -5,6 +5,8 @@ operational metadata, and translates transport/provider failures into a single
 application exception. No API key is stored in code or output artifacts.
 """
 
+from __future__ import annotations
+
 import json
 import os
 import re

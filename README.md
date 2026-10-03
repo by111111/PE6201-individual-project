@@ -6,21 +6,19 @@ A Streamlit web form turns a low-risk SME use case into a structured, human-revi
 
 **Live demo:** [https://pe6201-ai-pilot-planner.streamlit.app/](https://pe6201-ai-pilot-planner.streamlit.app/)
 
-**Repository status:** public, reproducible prototype. The code, synthetic data, evaluation procedure, raw outputs, final adjudicated scores, report, product documentation, and demo presentation guide are checked in.
+**Repository status:** public, reproducible prototype. The code, synthetic data, evaluation procedure, raw outputs, final adjudicated scores, and product documentation are checked in.
 
 ## Submission map
 
 | Requirement | Evidence |
 |---|---|
 | Public interactive demo | [Open the Streamlit app](https://pe6201-ai-pilot-planner.streamlit.app/) |
-| Final report (1,148 words) | [`docs/final_report.md`](docs/final_report.md) |
 | Original problem statement | [`docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf`](docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf) |
 | Product documentation | [`docs/product_documentation.md`](docs/product_documentation.md) |
 | Runnable code | [`app.py`](app.py), [`pilot_planner/`](pilot_planner/) |
 | Data and data explainer | [`data/evaluation_cases.csv`](data/evaluation_cases.csv), [`data/README.md`](data/README.md) |
 | Evaluation code and explainer | [`scripts/evaluate.py`](scripts/evaluate.py), [`evals/README.md`](evals/README.md), [`evals/rubric.md`](evals/rubric.md) |
 | Transparent evaluation evidence | [`results/evaluation_results.json`](results/evaluation_results.json), [`results/final_scores.csv`](results/final_scores.csv), [`results/PE6201_Evaluation_Results.xlsx`](results/PE6201_Evaluation_Results.xlsx) |
-| Demo presentation guide | [`docs/demo_script.md`](docs/demo_script.md) |
 
 ## Reviewer quick start
 
@@ -104,8 +102,7 @@ The same ten cases and model were used in both conditions. The manually adjudica
 ├── data/                          # frozen synthetic cases and provenance
 ├── evals/                         # protocol and binary scoring rubric
 ├── results/                       # raw evidence, scan-friendly scores, workbook
-├── docs/                          # report, product documentation, problem statement
-└── docs/demo_script.md            # five-minute face-and-screen demo guide
+└── docs/                          # product documentation and problem statement
 ```
 
 ## Scope and safety boundary

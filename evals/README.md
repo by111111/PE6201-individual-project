@@ -44,17 +44,17 @@ pip install -r requirements.txt
 export OPENROUTER_API_KEY='your-key'
 export OPENROUTER_MODEL='openai/gpt-4.1-mini'
 python -m scripts.evaluate \
-  --input data/evaluation_cases.csv \
-  --output results/evaluation_results.json
+  --input data/evaluation-cases.csv \
+  --output results/evaluation-results.json
 ```
 
 The script prompts securely if the key is not in the environment. Never place a real key in source files. Running the experiment incurs API cost. The committed evidence can be audited without rerunning it.
 
 ## Outputs and source of truth
 
-- `results/evaluation_results.json`: all 20 outputs, generation metadata, and initial automated-judge evidence.
-- `results/final_scores.csv`: scan-friendly final 0/1 manual adjudication by case.
-- `results/PE6201_Evaluation_Results.xlsx`: formatted final record with rubric, notes, summary, pass rates, cost, latency, and chart.
+- `results/evaluation-results.json`: all 20 outputs, generation metadata, and initial automated-judge evidence.
+- `results/final-scores.csv`: scan-friendly final 0/1 manual adjudication by case.
+- `results/PE6201-Evaluation-Results.xlsx`: formatted final record with rubric, notes, summary, pass rates, cost, latency, and chart.
 
 The automated judge produced 5.0/5 structured and 4.0/5 raw. Manual adjudication found false positives for vague feedback, metrics without baselines, and review steps that were not approval gates. Applying the written rubric strictly produced the final reported result: **5.0/5 structured, 3.1/5 raw, +1.9 points**. The original judge evidence is retained rather than silently replaced.
 
@@ -63,7 +63,7 @@ The automated judge produced 5.0/5 structured and 4.0/5 raw. Manual adjudication
 1. Read the saved output without looking at its condition score.
 2. Apply each rule in `rubric.md` independently.
 3. Quote or identify explicit evidence; if evidence is incomplete, score 0.
-4. Record the five binary values and a short note in `final_scores.csv`.
+4. Record the five binary values and a short note in `final-scores.csv`.
 5. Recalculate condition means and per-criterion pass rates.
 6. If changing a score, preserve the raw output and explain the reason.
 

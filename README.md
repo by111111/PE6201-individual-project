@@ -13,12 +13,12 @@ A Streamlit web form turns a low-risk SME use case into a structured, human-revi
 | Requirement | Evidence |
 |---|---|
 | Public interactive demo | [Open the Streamlit app](https://pe6201-ai-pilot-planner.streamlit.app/) |
-| Original problem statement | [`docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf`](docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf) |
-| Product documentation | [`docs/product_documentation.md`](docs/product_documentation.md) |
-| Runnable code | [`app.py`](app.py), [`pilot_planner/`](pilot_planner/) |
-| Data and data explainer | [`data/evaluation_cases.csv`](data/evaluation_cases.csv), [`data/README.md`](data/README.md) |
+| Original problem statement | [`docs/PE6201-Enterprise-AI-Pilot-Planning-Assistant.pdf`](docs/PE6201-Enterprise-AI-Pilot-Planning-Assistant.pdf) |
+| Product documentation | [`docs/product-documentation.md`](docs/product-documentation.md) |
+| Runnable code | [`app.py`](app.py), [`pilotplanner/`](pilotplanner/) |
+| Data and data explainer | [`data/evaluation-cases.csv`](data/evaluation-cases.csv), [`data/README.md`](data/README.md) |
 | Evaluation code and explainer | [`scripts/evaluate.py`](scripts/evaluate.py), [`evals/README.md`](evals/README.md), [`evals/rubric.md`](evals/rubric.md) |
-| Transparent evaluation evidence | [`results/evaluation_results.json`](results/evaluation_results.json), [`results/final_scores.csv`](results/final_scores.csv), [`results/PE6201_Evaluation_Results.xlsx`](results/PE6201_Evaluation_Results.xlsx) |
+| Transparent evaluation evidence | [`results/evaluation-results.json`](results/evaluation-results.json), [`results/final-scores.csv`](results/final-scores.csv), [`results/PE6201-Evaluation-Results.xlsx`](results/PE6201-Evaluation-Results.xlsx) |
 
 ## Reviewer quick start
 
@@ -51,11 +51,11 @@ The committed artifacts are enough to audit the completed experiment without spe
 
 ```bash
 python -m scripts.evaluate \
-  --input data/evaluation_cases.csv \
-  --output results/evaluation_results.json
+  --input data/evaluation-cases.csv \
+  --output results/evaluation-results.json
 ```
 
-Model outputs are stochastic and prices can change, so a rerun need not exactly match the checked-in results. Follow the manual adjudication procedure in [`evals/README.md`](evals/README.md) before replacing `final_scores.csv` or the workbook.
+Model outputs are stochastic and prices can change, so a rerun need not exactly match the checked-in results. Follow the manual adjudication procedure in [`evals/README.md`](evals/README.md) before replacing `final-scores.csv` or the workbook.
 
 ## Product architecture
 
@@ -70,7 +70,7 @@ flowchart LR
     G --> H[Human review and approval]
 ```
 
-The detailed Persona, Input, Output, external-intelligence boundary, evaluation path, and design trade-offs are in [`docs/product_documentation.md`](docs/product_documentation.md).
+The detailed Persona, Input, Output, external-intelligence boundary, evaluation path, and design trade-offs are in [`docs/product-documentation.md`](docs/product-documentation.md).
 
 ## Metrics: target versus result
 
@@ -88,7 +88,7 @@ The same ten cases and model were used in both conditions. The manually adjudica
 ```text
 .
 ├── app.py                         # Streamlit interface and presentation layer
-├── pilot_planner/                 # validation, prompt construction, provider, parsing
+├── pilotplanner/                  # validation, prompt construction, provider, parsing
 ├── scripts/evaluate.py            # two-condition experiment runner
 ├── data/                          # frozen synthetic cases and provenance
 ├── evals/                         # protocol and binary scoring rubric

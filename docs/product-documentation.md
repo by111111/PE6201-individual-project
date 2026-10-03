@@ -45,9 +45,9 @@ The interface presents the object as a readable plan plus a technical record con
 ```mermaid
 flowchart TB
     U[SME manager] --> UI[Streamlit web form\napp.py]
-    UI --> V[Validate bounded inputs\npilot_planner/core.py]
+    UI --> V[Validate bounded inputs\npilotplanner/core.py]
     V --> P[Build fixed system prompt\n+ JSON schema + delimited context]
-    P --> OR[OpenRouter API\npilot_planner/provider.py]
+    P --> OR[OpenRouter API\npilotplanner/provider.py]
     OR --> LLM[Hosted foundation model\nexternal intelligence]
     LLM --> OR
     OR --> J[Parse and validate JSON object]
@@ -65,8 +65,8 @@ flowchart TB
 ### Component responsibilities
 
 - `app.py`: presentation, form collection, safety messages, and rendering.
-- `pilot_planner/core.py`: input rules, structured prompt, raw baseline prompt, and rubric prompt.
-- `pilot_planner/provider.py`: external API call, timing/usage capture, and JSON parsing.
+- `pilotplanner/core.py`: input rules, structured prompt, raw baseline prompt, and rubric prompt.
+- `pilotplanner/provider.py`: external API call, timing/usage capture, and JSON parsing.
 - `scripts/evaluate.py`: controlled two-condition evaluation and evidence persistence.
 - `data/`: frozen test inputs and provenance.
 - `evals/`: evaluation protocol and scoring rules.

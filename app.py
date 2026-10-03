@@ -13,8 +13,8 @@ from html import escape
 
 import streamlit as st
 
-from pilot_planner.core import build_structured_messages, validate_input
-from pilot_planner.provider import OpenRouterProvider, ProviderError, parse_plan
+from pilotplanner.core import build_structured_messages, validate_input
+from pilotplanner.provider import OpenRouterProvider, ProviderError, parse_plan
 
 
 st.set_page_config(

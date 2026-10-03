@@ -12,8 +12,8 @@ import json
 import os
 from pathlib import Path
 
-from pilot_planner.core import build_judge_messages, build_raw_baseline_message, build_structured_messages
-from pilot_planner.provider import OpenRouterProvider, parse_plan
+from pilotplanner.core import build_judge_messages, build_raw_baseline_message, build_structured_messages
+from pilotplanner.provider import OpenRouterProvider, parse_plan
 
 def call_record(provider, messages, *, json_mode):
     """Make one provider call and return text plus captured telemetry."""
@@ -39,8 +39,8 @@ def judge(provider, plan_text):
 def main():
     """Parse CLI arguments, execute all cases, and write the JSON artifact."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="data/evaluation_cases.csv")
-    parser.add_argument("--output", default="outputs/evaluation_results.json")
+    parser.add_argument("--input", default="data/evaluation-cases.csv")
+    parser.add_argument("--output", default="results/evaluation-results.json")
     args = parser.parse_args()
     if not os.getenv("OPENROUTER_API_KEY"):
         os.environ["OPENROUTER_API_KEY"] = getpass.getpass("OpenRouter API key: ")
@@ -71,7 +71,7 @@ def main():
     artifact = {
         "method": "Same 10 synthetic cases; structured form + fixed system prompt versus direct raw-model request. Both outputs scored by the same strict five-item 0/1 rubric, with evidence retained for review.",
         "automated_judge_summary": {"n_cases": len(results), "structured_mean": structured_mean, "raw_mean": raw_mean, "mean_difference": structured_mean - raw_mean, "total_api_cost_usd": total_cost},
-        "manual_adjudication": {"status": "not produced by this script", "instructions": "Apply evals/rubric.md to the saved outputs and record final scores in results/final_scores.csv."},
+        "manual_adjudication": {"status": "not produced by this script", "instructions": "Apply evals/rubric.md to the saved outputs and record final scores in results/final-scores.csv."},
         "results": results,
     }
     Path(args.output).write_text(json.dumps(artifact, indent=2, ensure_ascii=False), encoding="utf-8")

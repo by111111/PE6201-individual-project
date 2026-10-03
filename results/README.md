@@ -12,9 +12,9 @@ The predeclared quality targets—structured mean ≥4.0/5 and improvement ≥1.
 
 ## Files
 
-- `evaluation_results.json`: all twenty generated plans, generation metadata, and the initial automated-judge scores/evidence.
-- `final_scores.csv`: final five binary values per case plus an adjudication note in plain text.
-- `PE6201_Evaluation_Results.xlsx`: formatted workbook containing summary metrics, pass rates, case results, rubric, and chart.
+- `evaluation-results.json`: all twenty generated plans, generation metadata, and the initial automated-judge scores/evidence.
+- `final-scores.csv`: final five binary values per case plus an adjudication note in plain text.
+- `PE6201-Evaluation-Results.xlsx`: formatted workbook containing summary metrics, pass rates, case results, rubric, and chart.
 
 The JSON is the source for raw model evidence. The CSV and workbook are the source for final manually adjudicated scores.
 

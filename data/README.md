@@ -2,11 +2,11 @@
 
 ## Purpose
 
-`evaluation_cases.csv` is the frozen input set for comparing the structured workflow with a raw direct-model request. It contains ten fictional SME situations and no personal, client, or confidential data.
+`evaluation-cases.csv` is the frozen input set for comparing the structured workflow with a raw direct-model request. It contains ten fictional SME situations and no personal, client, or confidential data.
 
 ## Provenance and creation
 
-The cases were drafted from the specification in `synthetic_case_generation_prompt.md`, reviewed for low-risk scope and variety, and frozen before the two conditions were run. They are not scraped, purchased, or derived from real companies. Version control preserves the exact inputs used for the reported results.
+The cases were drafted from the specification in `synthetic-case-generation-prompt.md`, reviewed for low-risk scope and variety, and frozen before the two conditions were run. They are not scraped, purchased, or derived from real companies. Version control preserves the exact inputs used for the reported results.
 
 The sample varies industry, company size, assistance task, participant role/group size, duration, pain point, and constraint. All cases share the same start date to simplify schedule comparison. Permitted tasks are drafting, summarising, classifying public/anonymised text, or creating internal checklists/surveys.
 
@@ -27,7 +27,7 @@ The sample varies industry, company size, assistance task, participant role/grou
 
 Every row is evaluated under two conditions:
 
-1. **Structured:** the fields are validated and passed through the fixed system prompt in `pilot_planner/core.py`.
+1. **Structured:** the fields are validated and passed through the fixed system prompt in `pilotplanner/core.py`.
 2. **Raw baseline:** the same values are rendered into one direct user request with no system prompt or required JSON structure.
 
 Both outputs are scored using the rules in `evals/rubric.md`. No case is used for model training or fine-tuning.

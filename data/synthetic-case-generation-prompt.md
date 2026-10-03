@@ -13,5 +13,4 @@ For each case, provide:
 - one privacy or operational constraint; and
 - the same fixed pilot start date.
 
-The resulting ten cases were reviewed for variety and frozen in `evaluation_cases.csv` before model outputs were compared.
-
+The resulting ten cases were reviewed for variety and frozen in `evaluation-cases.csv` before model outputs were compared.

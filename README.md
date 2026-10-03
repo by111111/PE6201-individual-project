@@ -2,87 +2,109 @@
 
 ## Enterprise AI Pilot Planning Assistant
 
-A structured web form sends one controlled prompt to a rented foundation model and returns a draft, human-reviewable AI pilot plan. This repository contains the complete PE6201 submission package: problem statement, analysis, runnable code, evaluation evidence, and a demo recording script.
+A Streamlit web form turns a low-risk SME use case into a structured, human-reviewable AI pilot plan. The form and fixed system prompt require a named test group, dated stages, a measurable target with a baseline, a feedback instrument, and a human approval gate. The system creates a draft; it never authorises a pilot or replaces business judgment.
 
-## Submission artifacts
+**Repository status:** public, reproducible prototype. The code, synthetic data, evaluation procedure, raw outputs, final adjudicated scores, report, product documentation, and recording guide are checked in. The student must still record and add the face-and-screen demo described in [`video/README.md`](video/README.md).
 
-- [Problem Statement](docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf)
-- [Analysis (≤1200 words)](docs/analysis.md)
-- [Runnable application](app.py)
-- [Ten-case evaluation dataset](data/evaluation_cases.csv)
-- [Final reviewed results](results/PE6201_Evaluation_Results.xlsx)
-- [Complete model outputs and judge evidence](results/evaluation_results.json)
-- [Demo video script and checklist](docs/demo_script.md)
+## Submission map
 
-> The final recorded video is intentionally not fabricated in this repository. Record the application with the supplied script, upload it to the permitted submission platform, and add the link here before submission.
+| Requirement | Evidence |
+|---|---|
+| Final report (about 1,200 words) | [`docs/analysis.md`](docs/analysis.md) |
+| Original problem statement | [`docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf`](docs/PE6201_Enterprise_AI_Pilot_Planning_Assistant.pdf) |
+| Product documentation | [`docs/product_documentation.md`](docs/product_documentation.md) |
+| Runnable code | [`app.py`](app.py), [`pilot_planner/`](pilot_planner/) |
+| Data and data explainer | [`data/evaluation_cases.csv`](data/evaluation_cases.csv), [`data/README.md`](data/README.md) |
+| Evaluation code and explainer | [`scripts/evaluate.py`](scripts/evaluate.py), [`evals/README.md`](evals/README.md), [`evals/rubric.md`](evals/rubric.md) |
+| Transparent evaluation evidence | [`results/evaluation_results.json`](results/evaluation_results.json), [`results/final_scores.csv`](results/final_scores.csv), [`results/PE6201_Evaluation_Results.xlsx`](results/PE6201_Evaluation_Results.xlsx) |
+| Demo guidance / video location | [`docs/demo_script.md`](docs/demo_script.md), [`video/README.md`](video/README.md) |
 
-## Scope
+## Reviewer quick start
 
-- One low-risk SME scenario -> one OpenRouter model call -> one structured draft plan.
-- No agent, RAG, document upload, user accounts, or persistent form storage.
-- The output is a draft only. A human project owner must approve it before implementation.
+### 1. Requirements
 
-## Run locally
+- Python 3.10 or newer
+- Internet access for model calls
+- An OpenRouter API key for live generation only
+
+### 2. Install and run
+
+macOS/Linux:
 
 ```bash
+git clone https://github.com/by111111/PE6201-individual-project.git
+cd PE6201-individual-project
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-export OPENROUTER_API_KEY='your-key'  # never commit this value
-export OPENROUTER_MODEL='openai/gpt-4.1-mini'  # optional
+export OPENROUTER_API_KEY='your-key'
+export OPENROUTER_MODEL='openai/gpt-4.1-mini'  # optional; experiment model
 streamlit run app.py
 ```
 
-The app opens at `http://localhost:8501`. Use fictional or non-confidential inputs only.
+Windows PowerShell uses `.venv\Scripts\Activate.ps1` and `$env:OPENROUTER_API_KEY='your-key'`. The app opens at `http://localhost:8501`. Use only fictional or non-confidential inputs. Never commit a real key; `.env` and Streamlit secrets are ignored.
 
-## Tests
+### 3. Run tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-The unit tests require only Python. GitHub Actions runs them on every push and pull request.
+These tests require no API key. GitHub Actions executes the same command on pushes and pull requests.
 
-## Evaluation
+### 4. Inspect or reproduce the evaluation
 
-The version-controlled synthetic dataset has 10 cases in `data/evaluation_cases.csv`. The script tests each case twice:
-
-1. Structured workflow: form fields plus fixed system prompt.
-2. Raw baseline: the same case sent directly, with no form and no fixed system prompt.
-
-Each output is scored 0/1 for five components: named test group, dated stages, measurable success metric, feedback instrument, and human checkpoint.
-
-### Completed experiment
-
-The 10-case experiment used `openai/gpt-4.1-mini` through OpenRouter. Final scores were manually adjudicated against the strict rubric after the initial automated judge proved too lenient on several raw outputs.
-
-- Structured workflow mean: **5.0/5**
-- Raw-model baseline mean: **3.1/5**
-- Mean improvement: **1.9 points**
-- Structured generation cost: **US$0.0085 for 10 outputs**, or approximately **US$0.0009 per output**
-- Structured mean generation latency: **5.5 seconds**
-
-The complete model outputs and initial judge evidence are saved in `results/evaluation_results.json`. The reviewed scores, rubric, chart, and case notes are in `results/PE6201_Evaluation_Results.xlsx`.
+The committed artifacts are enough to audit the completed experiment without spending money. To repeat the 40 API calls (20 generations plus 20 automated scoring calls):
 
 ```bash
-python -m scripts.evaluate --input data/evaluation_cases.csv --output results/evaluation_results.json
+python -m scripts.evaluate \
+  --input data/evaluation_cases.csv \
+  --output results/evaluation_results.json
 ```
 
-Running the evaluation makes model and judge calls and therefore incurs API cost. The committed results are sufficient to inspect the completed experiment.
+Model outputs are stochastic and prices can change, so a rerun need not exactly match the checked-in results. Follow the manual adjudication procedure in [`evals/README.md`](evals/README.md) before replacing `final_scores.csv` or the workbook.
+
+## Product architecture
+
+```mermaid
+flowchart LR
+    A[SME manager] --> B[Streamlit form]
+    B --> C[Input validation]
+    C --> D[Fixed prompt + JSON schema]
+    D --> E[OpenRouter hosted LLM]
+    E --> F[JSON parsing]
+    F --> G[Structured draft plan]
+    G --> H[Human review and approval]
+```
+
+The detailed Persona, Input, Output, external-intelligence boundary, evaluation path, and design trade-offs are in [`docs/product_documentation.md`](docs/product_documentation.md).
+
+## Metrics: target versus result
+
+| Metric | Target | Reached |
+|---|---:|---:|
+| Structured plan component score | at least 4.0/5 | **5.0/5** |
+| Improvement over raw-model baseline | at least 1.0 point | **+1.9 points** |
+| Structured output generation cost | monitor, no hard threshold | **US$0.0085 / 10 outputs** |
+| Structured mean generation latency | monitor, no hard threshold | **5.5 seconds** |
+
+The same ten cases and model were used in both conditions. The manually adjudicated raw baseline was 3.1/5. These results demonstrate explicit component coverage only—not factual correctness, user value, safety in every context, or business impact.
 
 ## Repository structure
 
 ```text
 .
-├── app.py                         # Streamlit interface
-├── pilot_planner/                 # prompt, validation, provider, parsing
-├── scripts/evaluate.py            # controlled two-condition experiment
+├── app.py                         # Streamlit interface and presentation layer
+├── pilot_planner/                 # validation, prompt construction, provider, parsing
+├── scripts/evaluate.py            # two-condition experiment runner
 ├── tests/                         # dependency-free unit tests
-├── data/                          # frozen synthetic cases and generation spec
-├── docs/                          # problem statement, analysis, demo script
-└── results/                       # reviewed workbook and raw evidence
+├── data/                          # frozen synthetic cases and provenance
+├── evals/                         # protocol and binary scoring rubric
+├── results/                       # raw evidence, scan-friendly scores, workbook
+├── docs/                          # report, product documentation, problem statement
+└── video/                         # face-and-screen recording instructions/location
 ```
 
-## Safety boundary
+## Scope and safety boundary
 
-Do not enter personal data, client names, financial data, credentials, contracts, or confidential strategy. Do not use this system for health, credit, hiring, legal, security, or other high-stakes decisions. A human project owner must review and approve every draft before implementation.
+The MVP follows one path: one low-risk scenario → one hosted-model call → one structured draft → human decision. It deliberately excludes accounts, persistent form storage, RAG, document upload, agents, and automated rollout. Do not enter personal data, client names, financial information, credentials, contracts, or confidential strategy. Do not use the system for health, credit, hiring, legal, security, or other high-stakes decisions.

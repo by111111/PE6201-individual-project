@@ -1,3 +1,10 @@
+"""Deterministic planning and evaluation helpers.
+
+The module owns the input contract, structured JSON schema, controlled system
+prompt, raw-baseline request, and automated-judge rubric. It makes no network
+calls, which keeps the core logic inspectable and unit-testable.
+"""
+
 import json
 from datetime import date, timedelta
 
@@ -14,12 +21,14 @@ PLAN_SCHEMA = {
 }
 
 def validate_input(payload: dict) -> list[str]:
+    """Return human-readable validation errors for one form payload."""
     missing = [name.replace("_", " ") for name in REQUIRED_FIELDS if not str(payload.get(name, "")).strip()]
     if not isinstance(payload.get("duration_weeks"), int) or not 1 <= payload["duration_weeks"] <= 12:
         missing.append("a pilot duration between 1 and 12 weeks")
     return missing
 
 def build_structured_messages(payload: dict) -> list[dict]:
+    """Build the fixed system prompt and delimited company-context message."""
     end_date = date.fromisoformat(payload["start_date"]) + timedelta(weeks=payload["duration_weeks"])
     system = f"""You are a cautious SME AI-pilot planning assistant. Produce a first-draft plan only.
 Return valid JSON only, matching this schema exactly: {json.dumps(PLAN_SCHEMA)}.
@@ -31,7 +40,7 @@ State that a human project owner must approve the plan before implementation."""
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 def build_raw_baseline_message(case: dict) -> list[dict]:
-    """Minimal direct request: no structured form and no fixed system prompt."""
+    """Build the user-only baseline request used in the controlled comparison."""
     text = (
         "Create an AI pilot plan for this company situation: "
         f"{case['industry']}; use case: {case['use_case']}; intended users: {case['target_user']}; "
@@ -41,6 +50,7 @@ def build_raw_baseline_message(case: dict) -> list[dict]:
     return [{"role": "user", "content": text}]
 
 def build_judge_messages(plan_text: str) -> list[dict]:
+    """Build a strict five-item model-judge request with evidence fields."""
     rubric = {
         "test_group_named": "1 only if a specific participant role and a number or unambiguous group size are named",
         "stages_dated": "1 only if at least two stages each have a calendar date, explicit deadline, or numbered week/day",
@@ -57,8 +67,13 @@ def build_judge_messages(plan_text: str) -> list[dict]:
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 def score_plan(plan: dict) -> dict:
+    """Smoke-check the presence/shape of required structured-output fields.
+
+    This helper is for application/unit-test diagnostics, not final evaluation.
+    The full semantic rules and manual adjudication live under ``evals/``.
+    """
     stages = plan.get("stages")
-    stage_ok = isinstance(stages, list) and bool(stages) and all(
+    stage_ok = isinstance(stages, list) and len(stages) >= 2 and all(
         isinstance(x, dict) and x.get("date_or_deadline") and x.get("task") for x in stages
     )
     checks = {

@@ -1,0 +1,11 @@
+case_id,industry,structured_group,structured_dates,structured_metric,structured_feedback,structured_human,structured_total,raw_group,raw_dates,raw_metric,raw_feedback,raw_human,raw_total,difference,adjudication_note
+C01,Fashion retail,1,1,1,1,1,5,1,1,0,1,0,3,2,"No numeric target/baseline; no rollout approval checkpoint."
+C02,Accounting,1,1,1,1,1,5,1,1,1,1,0,4,1,"Metrics compare with manual work; output review is not a rollout approval gate."
+C03,Logistics,1,1,1,1,1,5,1,1,0,1,0,3,2,"No numeric target/baseline; manual review is not tied to rollout approval."
+C04,Training,1,1,1,1,1,5,1,1,0,0,0,2,3,"No numeric target/baseline, named feedback instrument, or approval gate."
+C05,Restaurant,1,1,1,1,1,5,1,1,0,0,0,2,3,"Accuracy target has no baseline; feedback and spot checks are not a formal instrument/gate."
+C06,Design studio,1,1,1,1,1,5,1,1,1,0,1,4,1,"Numeric reduction target and initial manual review pass; no named feedback instrument."
+C07,Property services,1,1,1,1,1,5,1,1,1,1,0,4,1,"Numeric comparisons and coordinator ratings pass; no approval checkpoint."
+C08,Wholesale,1,1,1,1,1,5,1,1,0,0,0,2,3,"No numeric target/baseline, named instrument, or approval checkpoint."
+C09,Publishing,1,1,1,1,1,5,1,1,1,0,1,4,1,"Numeric reductions and mandatory editor review pass; no named feedback instrument."
+C10,Events,1,1,1,1,1,5,1,1,0,0,1,3,2,"Human review precedes use; metrics lack a stated baseline and feedback has no instrument."

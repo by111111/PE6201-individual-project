@@ -1,4 +1,10 @@
-"""Run the 10-case comparison after OPENROUTER_API_KEY is configured."""
+"""Run and persist the controlled 10-case, two-condition experiment.
+
+For every frozen CSV row, this module generates one structured plan and one
+raw user-only baseline, then asks the same model to apply the five-item rubric.
+It preserves outputs, evidence, latency, usage, and cost. Final manual scores
+are maintained separately because the automated judge proved too permissive.
+"""
 import argparse
 import csv
 import getpass
@@ -10,6 +16,7 @@ from pilot_planner.core import build_judge_messages, build_raw_baseline_message,
 from pilot_planner.provider import OpenRouterProvider, parse_plan
 
 def call_record(provider, messages, *, json_mode):
+    """Make one provider call and return text plus captured telemetry."""
     text = provider.generate(messages, json_mode=json_mode)
     return text, {
         "model": provider.model,
@@ -19,6 +26,7 @@ def call_record(provider, messages, *, json_mode):
     }
 
 def judge(provider, plan_text):
+    """Score one saved plan with the automated five-item judge."""
     raw, meta = call_record(provider, build_judge_messages(plan_text), json_mode=True)
     result = parse_plan(raw)
     scores = result.get("scores", {})
@@ -29,6 +37,7 @@ def judge(provider, plan_text):
     return result, meta
 
 def main():
+    """Parse CLI arguments, execute all cases, and write the JSON artifact."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default="data/evaluation_cases.csv")
     parser.add_argument("--output", default="outputs/evaluation_results.json")

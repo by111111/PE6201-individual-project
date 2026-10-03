@@ -1,38 +1,53 @@
-# Demo video script (approximately 4–5 minutes)
+# Demo video script (target: 5 minutes)
 
-## 0:00–0:35 — Problem and claim
+Use a picture-in-picture layout so your face and computer screen remain visible. Aim for precision, articulation, and succinctness. Do not read the repository verbatim.
 
-Show the repository title and explain: SME managers can ask a model for an AI pilot plan, but direct answers often omit operational details. The project tests whether a structured form plus a fixed system prompt improves explicit coverage of five required components.
+## 0:00–0:40 — Problem and measurable claim
 
-## 0:35–1:05 — Repository and reproducibility
+“SME managers can ask a model for an AI pilot plan, but a fluent answer may omit the test group, dates, measurable comparison, feedback method, or decision gate. My project tests whether a structured form plus a fixed system prompt improves explicit coverage of those five components. The output is a draft for human review, not an autonomous decision.”
 
-Briefly show `README.md`, `data/evaluation_cases.csv`, and `tests/test_core.py`. Point out that the ten synthetic cases were fixed before evaluation, no real company data is included, and secrets are excluded.
+Show the repository title and the target-versus-result table.
 
-## 1:05–2:30 — End-to-end application
+## 0:40–1:15 — Transparent repository
 
-Run `streamlit run app.py`. Enter one low-risk example, such as a 40-person fashion retailer drafting replies to repetitive customer-service emails. Use five service associates, a two-week duration, the pain point that drafting takes too long, and the constraint that no customer names or order IDs may be entered. Generate the plan.
+Show the submission map in `README.md`, then briefly open:
 
-Show the returned test group, dated stages, numeric success metric with baseline, feedback instrument, risks, and human approval checkpoint. Emphasise the “draft only” warning and that a responsible employee must approve the plan.
+- `data/README.md` and `data/evaluation_cases.csv`;
+- `evals/README.md` and `evals/rubric.md`; and
+- `docs/product_documentation.md` with the architecture diagram.
 
-## 2:30–3:35 — Controlled comparison
+State that the ten cases are synthetic, frozen before evaluation, and contain no real company or personal data.
 
-Open `results/PE6201_Evaluation_Results.xlsx`. Explain that the same ten cases were sent to the same model under two conditions: structured workflow and raw direct request. Describe the five binary rubric items. Show the final means: structured 5.0/5, raw 3.1/5, improvement 1.9 points.
+## 1:15–2:45 — End-to-end product run
 
-Mention that the automated judge originally gave the raw baseline 4.0/5, but strict manual adjudication rejected vague evidence. This is why the workbook is the final scoring record and the JSON preserves the raw outputs and initial judge evidence.
+Run `streamlit run app.py`. Enter a fictional example: a 40-person fashion retailer testing draft replies with five service associates for two weeks. The pain point is slow repetitive drafting; the constraint is that customer names and order IDs cannot be entered.
 
-## 3:35–4:20 — Cost, limitations, and responsible use
+Generate the plan and point to the named group, dated stages, target plus baseline, feedback instrument, risks, and approval gate. Show the “draft only” warning and technical record. Explain that deterministic Python validates and packages the request; the hosted LLM supplies the proposed plan; a human retains authority.
 
-State the measured structured-generation cost, approximately US$0.0085 for ten outputs, and average latency, 5.5 seconds. Explain that the experiment demonstrates component coverage, not factual correctness or business impact. Identify the main silent failure: a complete-looking but unsuitable plan.
+## 2:45–3:50 — Evaluation and results
 
-## 4:20–4:45 — Close
+Open `results/PE6201_Evaluation_Results.xlsx` or `results/final_scores.csv`. Explain the controlled comparison: same ten cases, same model, structured versus user-only raw request, five binary criteria.
 
-Conclude that the MVP supports a human planning decision but does not make one. The next step is a usability study with SME managers before adding more features or considering deployment.
+State the results: 5.0/5 structured, 3.1/5 raw, +1.9 points; targets were ≥4.0 and ≥1.0. Mention that the raw condition already did well on groups and stages, while metrics, feedback instruments, and approval gates were weak.
+
+Explain the evaluation correction: the automated judge initially gave the raw condition 4.0/5 but credited vague evidence. You manually reapplied the strict rubric, documented every change, and retained the original outputs and judge evidence.
+
+## 3:50–4:35 — Critique and rough edges
+
+State that the experiment proves component coverage only—not factual correctness, feasibility, safety, user value, or business impact. The sample is small and synthetic, with one model and one run per condition. The most dangerous failure is a polished but unsuitable plan. The prototype also lacks authentication, persistence, retry policy, and production monitoring.
+
+Mention the operating observations: approximately US$0.0085 for ten structured generations and 5.5 seconds mean latency.
+
+## 4:35–5:00 — Future path and close
+
+“The next step is not more features. It is a usability study with SME managers and two independent reviewers, measuring time saved, edit distance, usefulness, critical errors, and agreement. The project shows that small interface and prompt constraints can make an AI draft more operationally complete while keeping the final decision human.”
 
 ## Recording checklist
 
-- Hide all API keys, browser bookmarks, notifications, and personal data.
-- Record at 1080p if possible and keep code text readable.
-- Use one continuous end-to-end run; trim only waiting time if needed.
-- Verify audio and exported video before submission.
-- Add the final video link to the README after uploading it to the permitted submission platform.
-
+- Face and screen visible together throughout the explanation.
+- Target five minutes; never exceed eight minutes.
+- Record at 1080p where possible and enlarge code/text.
+- Hide API keys, bookmarks, notifications, and personal data.
+- Rehearse once; use signposting and short sentences.
+- Verify audio, playback, repository permissions, and video access.
+- Add the final MP4 or URL under `video/` and update the root README status.

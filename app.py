@@ -1,4 +1,10 @@
-"""Streamlit MVP for the PE6201 Enterprise AI Pilot Planning Assistant."""
+"""Presentation layer for the Enterprise AI Pilot Planning Assistant.
+
+This module renders the Streamlit form, enforces user-facing safety guidance,
+passes validated inputs to the prompt/provider modules, and displays the
+structured draft. It intentionally contains no persistence or approval logic:
+the final decision remains with a human project owner.
+"""
 import json
 import os
 from datetime import date

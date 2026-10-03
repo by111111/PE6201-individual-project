@@ -1,3 +1,10 @@
+"""OpenRouter adapter and defensive JSON parser.
+
+The adapter isolates the only external network dependency, records basic
+operational metadata, and translates transport/provider failures into a single
+application exception. No API key is stored in code or output artifacts.
+"""
+
 import json
 import os
 import re
@@ -5,10 +12,15 @@ import time
 from urllib import error, request
 
 class ProviderError(Exception):
+    """Raised when provider communication or model-output parsing fails."""
+
     pass
 
 class OpenRouterProvider:
+    """Minimal chat-completions client configured through environment values."""
+
     def __init__(self, model: str | None = None):
+        """Load the model and API key while initialising telemetry fields."""
         self.model = model or os.getenv("OPENROUTER_MODEL", "openai/gpt-4.1-mini")
         self.api_key = os.getenv("OPENROUTER_API_KEY")
         self.last_cost_usd = None
@@ -18,6 +30,7 @@ class OpenRouterProvider:
             raise ProviderError("OPENROUTER_API_KEY is missing")
 
     def generate(self, messages: list[dict], *, json_mode: bool = True) -> str:
+        """Send messages to OpenRouter and return text from the first choice."""
         payload = {"model": self.model, "messages": messages, "temperature": 0.2}
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
@@ -47,6 +60,7 @@ class OpenRouterProvider:
             raise ProviderError("No model content returned") from exc
 
 def parse_plan(raw: str) -> dict:
+    """Parse a model response as a JSON object or raise ``ProviderError``."""
     cleaned = re.sub(r"^```(?:json)?|```$", "", raw.strip(), flags=re.MULTILINE).strip()
     try:
         result = json.loads(cleaned)

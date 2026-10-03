@@ -50,4 +50,4 @@ Mention the operating observations: approximately US$0.0085 for ten structured g
 - Hide API keys, bookmarks, notifications, and personal data.
 - Rehearse once; use signposting and short sentences.
 - Verify audio, playback, repository permissions, and video access.
-- Add the final MP4 or URL under `video/` and update the root README status.
+- Check in or submit the final MP4 using the course's permitted submission method; if hosted externally, verify the grader can access the link.

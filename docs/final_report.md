@@ -1,4 +1,4 @@
-# Final Report: Enterprise AI Pilot Planning Assistant
+# PE6201 Final Report: Enterprise AI Pilot Planning Assistant
 
 **Word count: 1,148 words, excluding headings and this line**
 
